@@ -12,7 +12,7 @@ export default () => {
           Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam,
           nisi ut aliquid ex ea commodi.
         </Typography>
-        <Button>Contact Us</Button>
+        <Button variant="contained">Contact Us</Button>
       </Stack>
     </SectionWrapper>
   );

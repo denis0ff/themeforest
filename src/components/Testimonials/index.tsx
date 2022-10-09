@@ -4,12 +4,13 @@ import { Props } from './types';
 import { usePagination } from '@hooks';
 import Pagination from '@components/Pagination';
 import Testimonial from '@components/Testimonial';
+import { SectionWrapper } from '@theme';
 
-export default ({ title, items }: Props) => {
-  const [showPersons, ...props] = usePagination(items, 3);
+export default ({ title, items, count }: Props) => {
+  const [showPersons, ...props] = usePagination(items, count);
 
   return (
-    <>
+    <SectionWrapper variant="fenced" color="default" direction="column">
       <Header direction="row" spacing={3}>
         <Typography variant="h5" component="h5">
           {title}
@@ -21,6 +22,6 @@ export default ({ title, items }: Props) => {
           <Testimonial key={props.title} {...props} />
         ))}
       </Stack>
-    </>
+    </SectionWrapper>
   );
 };

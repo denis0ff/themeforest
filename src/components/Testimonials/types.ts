@@ -6,4 +6,5 @@ export type Props = {
     subtitle: string;
     paragraph: string;
   }>;
+  count: number;
 };

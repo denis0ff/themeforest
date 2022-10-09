@@ -1,10 +1,10 @@
-import { Card, CardContent, Typography } from '@mui/material';
+import { Card, CardContent, Link, Typography } from '@mui/material';
 import { CardImage, GridBox } from './styled';
 import { Props } from './types';
 
 export default ({ cards }: { cards: Props }) => (
   <GridBox container rowSpacing={4} columnSpacing={4} gap={4}>
-    {cards.map(({ image, title, paragraph }) => (
+    {cards.map(({ image, title, paragraph, link }) => (
       <Card key={image} sx={{ maxWidth: 255 }}>
         <CardImage image={`${process.env.PUBLIC_URL}/${image}.svg`} />
         <CardContent>
@@ -12,6 +12,7 @@ export default ({ cards }: { cards: Props }) => (
             {title}
           </Typography>
           <Typography variant="subtitle2">{paragraph}</Typography>
+          {link && <Link>{link}</Link>}
         </CardContent>
       </Card>
     ))}

@@ -1,13 +1,13 @@
 import { Button, Stack, Typography } from '@mui/material';
-import { SectionWrapper } from '@theme';
-import { benefitsInfo, blogInfo, clientsInfo, testimonialsInfo } from '@constants';
-import { Banner, CenteredBox, CircleLink } from './styled';
+import { Banner, SectionWrapper } from '@theme';
+import { benefitsInfo, blogInfo, testimonialsInfo } from '@constants';
+import { CircleLink } from './styled';
 import Benefits from '@components/Benefits';
 import Testimonials from '@components/Testimonials';
 import Pricing from '@components/Pricing';
 import Blog from '@components/Blog';
-import NeedHelp from '@components/NeedHelp';
 import Footer from '@components/Footer';
+import Clients from '@components/Clients';
 
 export default () => (
   <>
@@ -55,31 +55,7 @@ export default () => (
         <Button variant="contained">Learn more</Button>
       </div>
     </SectionWrapper>
-    <SectionWrapper variant="fenced" color="default" direction="column">
-      <Typography variant="h3" component="h3">
-        We provide services that guarantee your success
-      </Typography>
-      <Stack direction="row" spacing={1}>
-        <Stack direction="row" spacing={1}>
-          {clientsInfo.map(({ label, info }) => (
-            <CenteredBox key={label + info}>
-              <Typography variant="h4" component="h4">
-                {info}
-              </Typography>
-              <Typography variant="subtitle2" component="p">
-                {label}
-              </Typography>
-            </CenteredBox>
-          ))}
-        </Stack>
-        <Typography variant="subtitle1" component="p">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque
-          laudantium, totam rem aperiam, eaque ipsa quaeab illo inventore. Donec tincidunt tempor
-          quam, non mollis quam finibus nec.
-        </Typography>
-      </Stack>
-      <Banner image="clients" height="132"></Banner>
-    </SectionWrapper>
+    <Clients />
     <SectionWrapper variant="none" color="grey">
       <SectionWrapper variant="fenced" color="grey">
         <Stack direction="column" spacing={1}>
@@ -95,9 +71,7 @@ export default () => (
         <Benefits cards={benefitsInfo} />
       </SectionWrapper>
     </SectionWrapper>
-    <SectionWrapper variant="fenced" color="default" direction="column">
-      <Testimonials title="Testimonials" items={testimonialsInfo} />
-    </SectionWrapper>
+    <Testimonials title="Testimonials" items={testimonialsInfo} count={3} />
     <SectionWrapper variant="fenced" color="default" direction="column">
       <Pricing />
     </SectionWrapper>

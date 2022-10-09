@@ -1,15 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { themeParams } from '@theme';
 import styled from 'styled-components';
-import { Box } from '@mui/material';
-
-export const Banner = styled.div<{ image: string; width?: string; height: string }>`
-  position: relative;
-  width: ${({ width }) => (width ? width + 'px' : '100%')};
-  height: ${({ height }) => height}px;
-  background: center / cover no-repeat url(${process.env.PUBLIC_URL}/${({ image }) => image}.png);
-  background-size: auto;
-`;
 
 export const CircleLink = styled(NavLink)`
   position: absolute;
@@ -34,11 +25,4 @@ export const CircleLink = styled(NavLink)`
   &:hover {
     border: ${themeParams.spaces[1]} solid ${themeParams.colors.white};
   }
-`;
-
-export const CenteredBox = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
 `;

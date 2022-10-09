@@ -11,10 +11,6 @@ import NotFound from '@pages/NotFound';
 export const routes = [
   {
     path: '/',
-    element: <Navigate to="/home" replace />,
-  },
-  {
-    path: '/home',
     element: <Home />,
     label: 'Home',
   },

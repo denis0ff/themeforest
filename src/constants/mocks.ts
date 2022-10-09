@@ -11,6 +11,10 @@ export const clientsInfo = [
     label: 'Data management',
     info: '390',
   },
+  {
+    label: 'Data analytics',
+    info: '220',
+  },
 ];
 
 export const benefitsInfo = [
@@ -171,5 +175,150 @@ export const blogInfo = [
     paragraph:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure...',
     link: '',
+  },
+];
+
+export const servicesInfo = [
+  {
+    image: 'service-1',
+    title: 'Machine learning',
+    paragraph:
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
+    link: '',
+  },
+  {
+    image: 'service-2',
+    title: 'Embed analytics',
+    paragraph:
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
+  },
+  {
+    image: 'service-3',
+    title: 'Access control',
+    paragraph:
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
+    link: '',
+  },
+  {
+    image: 'service-4',
+    title: 'Data analytics',
+    paragraph:
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
+    link: '',
+  },
+  {
+    image: 'service-5',
+    title: 'Big data consulting',
+    paragraph:
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
+    link: '',
+  },
+  {
+    image: 'service-6',
+    title: 'Artificial intelligence',
+    paragraph:
+      'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
+    link: '',
+  },
+];
+
+export const AboutInfos = [
+  {
+    title: 'Who we are',
+    paragraph:
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\nDonec tincidunt tempor quam, non mollis quam finibus nec. Quisque finibus consequat felis vel pretium. Aliquam gravida nisi vel convallis ultricies. Integer ante sapien, consequat et dolor vel, cursus lacinia lectus.',
+    image: 'info-1',
+  },
+  {
+    title: 'Our mission',
+    paragraph:
+      'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.\nDonec tincidunt tempor quam, non mollis quam finibus nec. Quisque finibus consequat felis vel pretium.',
+    image: 'info-2',
+  },
+];
+
+export const teamInfo = [
+  {
+    image: '001_img_person_1',
+    title: 'Sargis Grigor',
+    subtitle: 'Data analyst',
+  },
+  {
+    image: '002_img_person_2',
+    title: 'Bagrat Leo',
+    subtitle: 'Data engineer',
+  },
+  {
+    image: '003_img_person_3',
+    title: 'Gor Sargis',
+    subtitle: 'Data analyst',
+  },
+  {
+    image: '004_img_person_4',
+    title: 'Maral Mari',
+    subtitle: 'Data analyst',
+  },
+  {
+    image: '005_img_person_5',
+    title: 'Hakob Jirair',
+    subtitle: 'Data engineer',
+  },
+  {
+    image: '006_img_person_6',
+    title: 'Eva Vosgi',
+    subtitle: 'Data scientist',
+  },
+  {
+    image: '007_img_person_7',
+    title: 'Kohar Marine',
+    subtitle: 'Data scientist',
+  },
+  {
+    image: '008_img_person_8',
+    title: 'Ararat Ohannes',
+    subtitle: 'Data analyst',
+  },
+  {
+    image: '009_img_person_9',
+    title: 'Eduard Vosgi',
+    subtitle: 'Data scientist',
+  },
+];
+
+export const faqList = [
+  {
+    title: 'What are data analytics?',
+    description:
+      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+  },
+  {
+    title: 'What is data mining?',
+    description:
+      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+  },
+  {
+    title: 'What is business intelligence?',
+    description:
+      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+  },
+  {
+    title: 'What is exploratory data analysis (EDA)?',
+    description:
+      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+  },
+  {
+    title: 'What is confirmatory data analysis (CDA)?',
+    description:
+      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+  },
+  {
+    title: 'What are predictive analytics?',
+    description:
+      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+  },
+  {
+    title: 'What is data visualisation',
+    description:
+      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
   },
 ];

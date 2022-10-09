@@ -35,9 +35,9 @@ export default () => {
           <Typography variant="h6" color="white">
             Contact info
           </Typography>
-          {contacts.map((contact) => (
-            <Typography key={contact} variant="subtitle2" color="white">
-              {contact}
+          {contacts.map(({ info }) => (
+            <Typography key={info} variant="subtitle2" color="white">
+              {info}
             </Typography>
           ))}
         </Stack>

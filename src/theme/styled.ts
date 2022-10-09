@@ -30,4 +30,10 @@ export const SectionWrapper = styled.div<{
   ${({ isBordered }) => isBordered && `border-bottom: 1px solid ${themeParams.colors.border}`};
 `;
 
-export const Button = styled.button``;
+export const Banner = styled.div<{ image: string; width?: string; height: string }>`
+  position: relative;
+  width: ${({ width }) => (width ? width + 'px' : '100%')};
+  height: ${({ height }) => height}px;
+  background: center / cover no-repeat url(${process.env.PUBLIC_URL}/${({ image }) => image}.png);
+  background-size: auto;
+`;
