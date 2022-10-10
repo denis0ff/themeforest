@@ -4,7 +4,7 @@ import { Banner, SectionWrapper } from '@theme';
 import ClientStats from '@components/ClientStats';
 
 export default () => (
-  <SectionWrapper variant="fenced" color="default" direction="column">
+  <SectionWrapper variant="fenced" bgColor="default" direction="column" mt={8} mb={8}>
     <Typography variant="h4" component="h4">
       We provide services that guarantee your success
     </Typography>

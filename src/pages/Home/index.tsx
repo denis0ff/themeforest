@@ -11,7 +11,7 @@ import Clients from '@components/Clients';
 
 export default () => (
   <>
-    <SectionWrapper variant="fenced" color="default">
+    <SectionWrapper variant="fenced" bgColor="default" direction="row" mt={8} mb={8}>
       <Typography variant="h2" component="h2">
         Find true power in your data with <span>Ensome</span>
       </Typography>
@@ -20,7 +20,7 @@ export default () => (
         totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.
       </Typography>
     </SectionWrapper>
-    <SectionWrapper variant="none" color="default">
+    <SectionWrapper variant="none" bgColor="default">
       <Banner image="home1" height="590">
         <CircleLink to="/services">
           Learn more
@@ -28,7 +28,7 @@ export default () => (
         </CircleLink>
       </Banner>
     </SectionWrapper>
-    <SectionWrapper variant="fenced" color="default">
+    <SectionWrapper variant="fenced" bgColor="default" direction="row" mt={8} mb={8}>
       <Typography variant="h2" component="h2">
         The <span>newest</span> business analytics platform
       </Typography>
@@ -41,7 +41,7 @@ export default () => (
         <Button variant="contained">Discover more</Button>
       </div>
     </SectionWrapper>
-    <SectionWrapper variant="none" color="grey">
+    <SectionWrapper variant="none" bgColor="grey" direction="row" mt={8} mb={8}>
       <Banner image="home2" width="929" height="740" />
       <div>
         <Typography variant="h3" component="h3">
@@ -56,8 +56,8 @@ export default () => (
       </div>
     </SectionWrapper>
     <Clients />
-    <SectionWrapper variant="none" color="grey">
-      <SectionWrapper variant="fenced" color="grey">
+    <SectionWrapper variant="none" bgColor="grey" pb={8} pt={8}>
+      <SectionWrapper variant="fenced" bgColor="grey" direction="row">
         <Stack direction="column" spacing={1}>
           <Typography variant="h3" component="h3">
             The benefits of Ensome
@@ -72,12 +72,8 @@ export default () => (
       </SectionWrapper>
     </SectionWrapper>
     <Testimonials title="Testimonials" items={testimonialsInfo} count={3} />
-    <SectionWrapper variant="fenced" color="default" direction="column">
-      <Pricing />
-    </SectionWrapper>
-    <SectionWrapper variant="fenced" color="default" direction="column">
-      <Blog title="Our blog" items={blogInfo} />
-    </SectionWrapper>
+    <Pricing />
+    <Blog title="Our blog" items={blogInfo} />
     <Footer />
   </>
 );

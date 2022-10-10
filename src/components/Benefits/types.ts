@@ -1,6 +1,9 @@
-export type Props = Array<{
-  image: string;
-  title: string;
-  paragraph: string;
-  link?: string;
-}>;
+export type Props = {
+  cards: Array<{
+    image: string;
+    title: string;
+    subtitle: string;
+    link?: string;
+  }>;
+  maxWidth?: string;
+};

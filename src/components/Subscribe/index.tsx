@@ -3,8 +3,8 @@ import { SectionWrapper } from '@theme';
 
 export default () => {
   return (
-    <SectionWrapper variant="none" color="dark" isBordered>
-      <SectionWrapper variant="fenced" color="dark">
+    <SectionWrapper variant="none" bgColor="dark" isBordered pt={6} pb={6}>
+      <SectionWrapper variant="fenced" bgColor="dark" spacing={8} direction="row">
         <Stack direction="column" spacing={2}>
           <Typography variant="h5" component="h5" color="white">
             Subscribe to our newsletter
@@ -17,14 +17,16 @@ export default () => {
         </Stack>
         <Paper
           component="form"
-          sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
+          sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', minWidth: 445, minHeight: 54 }}
         >
           <InputBase
             sx={{ ml: 1, flex: 1 }}
             placeholder="Your email"
             inputProps={{ 'aria-label': 'search google maps' }}
           />
-          <Button aria-label="search">Send</Button>
+          <Button aria-label="search" color="secondary" variant="text">
+            Send
+          </Button>
         </Paper>
       </SectionWrapper>
     </SectionWrapper>

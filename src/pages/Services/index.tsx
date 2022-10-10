@@ -8,7 +8,7 @@ import PageHeader from '@components/PageHeader';
 export default () => (
   <>
     <PageHeader title="Data Analytics Services" subtitle="Services" />
-    <SectionWrapper variant="fenced" color="default">
+    <SectionWrapper variant="fenced" bgColor="default" pb={8} pt={8}>
       <Benefits cards={servicesInfo} />
     </SectionWrapper>
     <Clients />

@@ -2,16 +2,8 @@ import { CardMedia, Grid } from '@mui/material';
 import { themeParams } from '@theme';
 import styled from 'styled-components';
 
-export const GridBox = styled(Grid)<{ isSkew?: boolean }>`
-  margin: ${themeParams.spaces[6]} ${themeParams.spaces[1]} !important;
-  ${({ isSkew }) =>
-    isSkew &&
-    `& > :first-child {
-    margin-top: -${themeParams.spaces[5]};
-    }
-    & > :last-child {
-      margin-bottom: -${themeParams.spaces[5]};
-    }`}
+export const GridBox = styled(Grid)`
+  display: grid;
 `;
 
 export const CardImage = styled(CardMedia)`

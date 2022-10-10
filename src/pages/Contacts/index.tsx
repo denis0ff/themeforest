@@ -8,7 +8,7 @@ import FooterLinks from '@components/FooterLinks';
 
 export default () => (
   <>
-    <SectionWrapper variant="fenced" color="default" direction="column">
+    <SectionWrapper variant="fenced" bgColor="default" direction="row" pb={8} pt={8} spacing={4}>
       <div>
         <Breadcrumbs current="Contacts" />
         <Typography variant="h2" component="h2">

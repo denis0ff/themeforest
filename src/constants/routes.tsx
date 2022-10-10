@@ -1,4 +1,3 @@
-import { Navigate } from 'react-router-dom';
 import Home from '@pages/Home';
 import Blog from '@pages/Blog';
 import Contacts from '@pages/Contacts';
@@ -7,6 +6,7 @@ import Services from '@pages/Services';
 import About from '@pages/About';
 import Faq from '@pages/Faq';
 import NotFound from '@pages/NotFound';
+import Solutions from '@pages/Solutions';
 
 export const routes = [
   {
@@ -18,6 +18,11 @@ export const routes = [
     path: '/blog',
     element: <Blog />,
     label: 'Blog',
+  },
+  {
+    path: '/solutions',
+    element: <Solutions />,
+    label: 'Solutions',
   },
   {
     path: '/contacts',
@@ -57,8 +62,8 @@ export const additionalRoutes = [
     label: 'Pages',
   },
   {
-    path: '/services',
-    element: <Services />,
+    path: '/404',
+    element: <NotFound />,
     label: 'Elements',
   },
   {
@@ -67,14 +72,14 @@ export const additionalRoutes = [
     label: 'FAQ',
   },
   {
-    path: '/contacts',
-    element: <Contacts />,
+    path: '/404',
+    element: <NotFound />,
     label: 'Pricing',
   },
 
   {
-    path: '/services',
-    element: <Services />,
+    path: '/404',
+    element: <NotFound />,
     label: 'Site map',
   },
 ];

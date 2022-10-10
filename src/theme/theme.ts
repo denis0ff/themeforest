@@ -44,6 +44,11 @@ export const themeParams = {
 let theme = createTheme({});
 theme = createTheme({
   typography: {
+    fontFamily: `"Manrope", "Open Sans", sans-serif`,
+    fontSize: 14,
+    fontWeightLight: 300,
+    fontWeightRegular: 400,
+    fontWeightMedium: 500,
     allVariants: {
       color: black,
     },

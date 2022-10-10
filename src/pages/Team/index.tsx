@@ -2,12 +2,14 @@ import Breadcrumbs from '@components/Breadcrumbs';
 import TeamBox from '@components/TeamBox';
 import { Stack, Typography } from '@mui/material';
 import { SectionWrapper } from '@theme';
-import { teamInfo } from '@constants';
+import { MOCK_MANY_DEVELOPERS } from '@constants';
+import Subscribe from '@components/Subscribe';
+import FooterLinks from '@components/FooterLinks';
 
 export default () => (
   <>
-    <SectionWrapper color="dark" variant="none">
-      <SectionWrapper color="dark" variant="fenced" direction="column">
+    <SectionWrapper bgColor="dark" variant="none">
+      <SectionWrapper bgColor="dark" variant="fenced" direction="column">
         <Breadcrumbs current="Our team" />
         <Stack direction="row" spacing={3}>
           <Typography variant="h2" component="h2" color="white">
@@ -23,6 +25,8 @@ export default () => (
         </Stack>
       </SectionWrapper>
     </SectionWrapper>
-    <TeamBox persons={teamInfo} />
+    <TeamBox persons={MOCK_MANY_DEVELOPERS} />
+    <Subscribe />
+    <FooterLinks />
   </>
 );

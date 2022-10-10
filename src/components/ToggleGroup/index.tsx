@@ -10,12 +10,7 @@ export default ({ toggles }: Props) => {
   };
 
   return (
-    <ToggleButtonGroup
-      value={picked}
-      exclusive
-      onChange={handleAlignment}
-      aria-label="text alignment"
-    >
+    <ToggleButtonGroup value={picked} exclusive onChange={handleAlignment} color="primary">
       {toggles.map((toggle) => (
         <ToggleButton value={toggle} key={toggle}>
           {toggle}

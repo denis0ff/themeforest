@@ -1,4 +1,3 @@
-import { CenteredBox } from './styled';
 import { Divider, Stack, Typography } from '@mui/material';
 import { Props } from './types';
 
@@ -9,14 +8,14 @@ export default ({ items, isDiveded }: Props) => (
     divider={isDiveded && <Divider orientation="vertical" flexItem />}
   >
     {items.map(({ label, info }) => (
-      <CenteredBox key={label + info}>
+      <Stack direction="column" key={label + info} alignItems="center">
         <Typography variant="h4" component="h4">
           {info}
         </Typography>
         <Typography variant="subtitle2" component="p">
           {label}
         </Typography>
-      </CenteredBox>
+      </Stack>
     ))}
   </Stack>
 );

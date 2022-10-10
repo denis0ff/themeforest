@@ -1,3 +1,4 @@
+import { Stack } from '@mui/material';
 import styled from 'styled-components';
 import { themeParams } from './theme';
 
@@ -11,28 +12,26 @@ export const Logo = styled.div<{ isWhite?: boolean }>`
 export const Social = styled.div<{ path: string }>`
   width: 24px;
   height: 24px;
+  cursor: pointer;
   background-image: url(${process.env.PUBLIC_URL}/${({ path }) => path}.svg);
 `;
 
-export const SectionWrapper = styled.div<{
+export const SectionWrapper = styled(Stack)<{
   variant: 'fenced' | 'none';
-  color: 'default' | 'grey' | 'dark';
-  direction?: 'column';
+  bgColor: 'default' | 'grey' | 'dark';
   isBordered?: boolean;
 }>`
   margin: 0 auto;
-  display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: ${({ direction }) => (direction === 'column' ? 'column' : 'row')};
   width: ${({ variant }) => (variant === 'fenced' ? '1110px' : '100%')};
-  background-color: ${({ color }) => themeParams.bgColor[color]};
+  background-color: ${({ bgColor }) => themeParams.bgColor[bgColor]};
   ${({ isBordered }) => isBordered && `border-bottom: 1px solid ${themeParams.colors.border}`};
 `;
 
 export const Banner = styled.div<{ image: string; width?: string; height: string }>`
   position: relative;
-  width: ${({ width }) => (width ? width + 'px' : '100%')};
+  min-width: ${({ width }) => (width ? width + 'px' : '100%')};
   height: ${({ height }) => height}px;
   background: center / cover no-repeat url(${process.env.PUBLIC_URL}/${({ image }) => image}.png);
   background-size: auto;

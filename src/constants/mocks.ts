@@ -21,25 +21,25 @@ export const benefitsInfo = [
   {
     image: 'machine',
     title: 'Machine learning',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo.',
   },
   {
     image: 'access',
     title: 'Access control',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo.',
   },
   {
     image: 'embed_analytics',
     title: 'Embed analytics',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo.',
   },
   {
     image: 'data_analytics',
     title: 'Data analytics',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos duciu quili blandit praesentium voluptatum ipsa quae ab illo.',
   },
 ];
@@ -182,41 +182,41 @@ export const servicesInfo = [
   {
     image: 'service-1',
     title: 'Machine learning',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
     link: '',
   },
   {
     image: 'service-2',
     title: 'Embed analytics',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
   },
   {
     image: 'service-3',
     title: 'Access control',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
     link: '',
   },
   {
     image: 'service-4',
     title: 'Data analytics',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
     link: '',
   },
   {
     image: 'service-5',
     title: 'Big data consulting',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
     link: '',
   },
   {
     image: 'service-6',
     title: 'Artificial intelligence',
-    paragraph:
+    subtitle:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure.',
     link: '',
   },
@@ -285,6 +285,8 @@ export const teamInfo = [
   },
 ];
 
+export const MOCK_MANY_DEVELOPERS = [...teamInfo, ...teamInfo, ...teamInfo];
+
 export const faqList = [
   {
     title: 'What are data analytics?',
@@ -320,5 +322,49 @@ export const faqList = [
     title: 'What is data visualisation',
     description:
       'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+  },
+];
+
+export const solutionInfo = [
+  {
+    image: 'solution-1',
+    title: 'Data integration',
+    subtitle:
+      'Extract, transform, load (ETL) or extract, load, transform (ELT); data governance (security, availability, quality) implementation.',
+    link: '',
+  },
+  {
+    image: 'solution-2',
+    title: 'Data integration',
+    subtitle:
+      'Data preparation and management; machine learning (ML); designing and implanting artificial intelligence (AI) solutions.',
+  },
+  {
+    image: 'solution-3',
+    title: 'Big data',
+    subtitle:
+      'Big data infrastructure setup and support.; big data quality and security management; big data capture, analysis and reporting.',
+    link: '',
+  },
+  {
+    image: 'solution-4',
+    title: 'Data warehousing',
+    subtitle:
+      'The process of constructing and using a data warehouse. Data warehouse and data marts design and implementation.',
+    link: '',
+  },
+  {
+    image: 'solution-5',
+    title: 'Self-service BI',
+    subtitle:
+      'Business intelligence; data analytics infrastructure design and implementation; scheduled analytics querying and reporting.',
+    link: '',
+  },
+  {
+    image: 'solution-6',
+    title: 'Data visualization',
+    subtitle:
+      'Interactive dashboarding; custom and pre-built visuals; multiple visualization techniques (symbol maps, line charts, pie charts...)',
+    link: '',
   },
 ];

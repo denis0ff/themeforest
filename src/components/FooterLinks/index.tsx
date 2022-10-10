@@ -5,9 +5,17 @@ import NavBar from '@components/NavBar';
 
 export default () => {
   return (
-    <SectionWrapper variant="none" color="dark">
-      <SectionWrapper variant="fenced" color="dark" isBordered>
-        <Stack direction="column" spacing={2}>
+    <SectionWrapper variant="none" bgColor="dark">
+      <SectionWrapper
+        variant="fenced"
+        bgColor="dark"
+        isBordered
+        direction="row"
+        spacing={5}
+        pt={5}
+        pb={5}
+      >
+        <Stack direction="column" spacing={2} alignSelf="flex-start">
           <Logo isWhite />
           <Typography variant="subtitle2" color="white">
             Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit

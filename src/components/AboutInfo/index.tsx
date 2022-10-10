@@ -4,7 +4,7 @@ import { MirroredStack } from './styled';
 import { Props } from './types';
 
 export default ({ title, paragraph, image, isMirror = false }: Props) => (
-  <SectionWrapper variant="fenced" color="default">
+  <SectionWrapper variant="fenced" bgColor="default" direction="row" pb={4} pt={4} spacing={4}>
     <MirroredStack direction="column" isMirror={isMirror}>
       <Typography variant="h4" component="h4">
         {title}
