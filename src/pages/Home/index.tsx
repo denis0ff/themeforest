@@ -5,7 +5,7 @@ import { CircleLink } from './styled';
 import Benefits from '@components/Benefits';
 import Testimonials from '@components/Testimonials';
 import Pricing from '@components/Pricing';
-import Blog from '@components/Blog';
+import Blog from '@components/HomeBlog';
 import Footer from '@components/Footer';
 import Clients from '@components/Clients';
 

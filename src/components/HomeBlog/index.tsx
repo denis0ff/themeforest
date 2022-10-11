@@ -3,7 +3,7 @@ import { Header } from './styled';
 import { Props } from './types';
 import { usePagination } from '@hooks';
 import Pagination from '@components/Pagination';
-import BlogCard from '@components/BlogCard';
+import BlogCard from '@components/HomeBlogCard';
 import { SectionWrapper } from '@theme';
 
 export default ({ title, items }: Props) => {

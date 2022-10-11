@@ -1,3 +1,5 @@
+import { v4 } from 'uuid';
+
 export const clientsInfo = [
   {
     label: 'Project executed',
@@ -129,54 +131,68 @@ export const rateToggles = ['Mo', 'Yr'];
 
 export const blogInfo = [
   {
+    id: 1,
     image: 'blog1',
     title: 'ISO 13485 compliance of medical devices',
     subtitle: '22 June 2022',
     paragraph:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure...',
     link: '',
+    tags: ['ISO', 'Science', 'Medical'],
   },
   {
+    id: v4(),
     image: 'blog2',
-    title: 'Business analysis helps you  in finance',
+    title: 'Business analysis helps you  in finance',
     subtitle: '22 June 2022',
     paragraph:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure...',
     link: '',
+    tags: ['Business', 'Finance'],
   },
   {
+    id: v4(),
     image: 'blog3',
     title: '5 web portal examples your business can learn from',
     subtitle: '22 June 2022',
     paragraph:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure...',
     link: '',
+    tags: ['Web', 'Business'],
   },
   {
+    id: v4(),
     image: 'blog4',
-    title: 'ISO 13485 compliance of medical devices',
-    subtitle: '23 June 2022',
+    title: 'Staffing software: key capabilities and top products',
+    subtitle: '20 June 2022',
     paragraph:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure...',
     link: '',
+    tags: ['App', 'CIO', 'Future'],
   },
   {
+    id: v4(),
     image: 'blog5',
-    title: 'Business analysis helps you  in finance',
-    subtitle: '23 June 2022',
+    title: 'Successful businesses of the future',
+    subtitle: '19 June 2022',
     paragraph:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure...',
     link: '',
+    tags: ['Business', 'Finance'],
   },
   {
+    id: v4(),
     image: 'blog6',
-    title: '5 web portal examples your business can learn from',
+    title: 'White box penetration testing',
     subtitle: '24 June 2022',
     paragraph:
       'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas. Quis autem vel eum iure...',
     link: '',
+    tags: ['App', 'CIO', 'Future'],
   },
 ];
+
+export const MOCK_MANY_NEWS = [...blogInfo, ...blogInfo, ...blogInfo, ...blogInfo];
 
 export const servicesInfo = [
   {

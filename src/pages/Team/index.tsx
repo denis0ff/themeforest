@@ -8,14 +8,23 @@ import FooterLinks from '@components/FooterLinks';
 
 export default () => (
   <>
-    <SectionWrapper bgColor="dark" variant="none">
-      <SectionWrapper bgColor="dark" variant="fenced" direction="column">
-        <Breadcrumbs current="Our team" />
-        <Stack direction="row" spacing={3}>
+    <SectionWrapper bgColor="dark" variant="none" pt={4} pb={8}>
+      <SectionWrapper bgColor="dark" variant="fenced" direction="column" spacing={4}>
+        <SectionWrapper variant="none" bgColor="dark" alignItems="flex-start">
+          <Breadcrumbs current="Our team" color="white" />
+        </SectionWrapper>
+        <Stack
+          direction="row"
+          spacing={3}
+          pt={8}
+          pb={8}
+          width="100%"
+          justifyContent="space-between"
+        >
           <Typography variant="h2" component="h2" color="white">
             Our team
           </Typography>
-          <Typography variant="subtitle1" component="p" color="white">
+          <Typography variant="subtitle1" component="p" color="white" maxWidth={540}>
             Sed ut perspiciatis unde omnis iste natus error volupta accusantium doloremque
             laudantium, totam remiga aperiam, eaque ipsa. Phasellus tristique eu nisl eu
             consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer

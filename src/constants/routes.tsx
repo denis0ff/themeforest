@@ -7,6 +7,7 @@ import About from '@pages/About';
 import Faq from '@pages/Faq';
 import NotFound from '@pages/NotFound';
 import Solutions from '@pages/Solutions';
+import News from '@pages/News';
 
 export const routes = [
   {
@@ -18,6 +19,11 @@ export const routes = [
     path: '/blog',
     element: <Blog />,
     label: 'Blog',
+  },
+  {
+    path: '/blog/:id',
+    element: <News />,
+    label: 'News',
   },
   {
     path: '/solutions',
