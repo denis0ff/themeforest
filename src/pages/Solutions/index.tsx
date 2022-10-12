@@ -4,7 +4,7 @@ import PageHeader from '@components/PageHeader';
 import ProsList from '@components/ProsList';
 import Testimonials from '@components/Testimonials';
 import { servicesInfo, solutionInfo, testimonialsInfo } from '@constants';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import { Banner, SectionWrapper } from '@theme';
 
@@ -20,10 +20,12 @@ export default () => (
     </SectionWrapper>
     <SectionWrapper variant="none" bgColor="grey" direction="row" spacing={4}>
       <Banner image="solutions" width="929" height="690" />
-      <Stack spacing={4} maxWidth={540}>
-        <Typography variant="h5">Why choose us?</Typography>
-        <ProsList items={servicesInfo.slice(0, 3)} />
-      </Stack>
+      <Box width="100%">
+        <Stack spacing={4} maxWidth={540}>
+          <Typography variant="h2">Why choose us?</Typography>
+          <ProsList items={servicesInfo.slice(0, 3)} />
+        </Stack>
+      </Box>
     </SectionWrapper>
     <Testimonials title={'Testimonials'} items={testimonialsInfo} count={3} />
     <Footer />

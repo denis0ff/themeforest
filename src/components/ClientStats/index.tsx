@@ -9,10 +9,10 @@ export default ({ items, isDiveded }: Props) => (
   >
     {items.map(({ label, info }) => (
       <Stack direction="column" key={label + info} alignItems="center" spacing={1}>
-        <Typography variant="h4" component="h4">
+        <Typography variant="h2" color="primary">
           {info}
         </Typography>
-        <Typography variant="subtitle2" component="p" textAlign="center">
+        <Typography variant="subtitle1" textAlign="center">
           {label}
         </Typography>
       </Stack>

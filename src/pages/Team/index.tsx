@@ -16,15 +16,15 @@ export default () => (
         <Stack
           direction="row"
           spacing={3}
-          pt={8}
-          pb={8}
+          pt={4}
+          pb={4}
           width="100%"
           justifyContent="space-between"
         >
-          <Typography variant="h2" component="h2" color="white">
+          <Typography variant="h1" color="white">
             Our team
           </Typography>
-          <Typography variant="subtitle1" component="p" color="white" maxWidth={540}>
+          <Typography variant="subtitle1" component="p" maxWidth={540}>
             Sed ut perspiciatis unde omnis iste natus error volupta accusantium doloremque
             laudantium, totam remiga aperiam, eaque ipsa. Phasellus tristique eu nisl eu
             consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer

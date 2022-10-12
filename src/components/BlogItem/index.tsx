@@ -18,10 +18,10 @@ export default ({ id, image, title, subtitle, paragraph, tags, variant }: Props)
         <Banner image={image} {...getImageSize(variant)} />
         <div>
           <Typography variant="subtitle1">{subtitle}</Typography>
-          <Typography variant="h6" component="h6">
+          <Typography variant="h4" component="h4">
             {title}
           </Typography>
-          {isParagraph && <Typography variant="subtitle2">{sliceParagraph(paragraph)}</Typography>}
+          {isParagraph && <Typography variant="body1">{sliceParagraph(paragraph)}</Typography>}
           {isTag && <TagList tags={tags} />}
           {isLink && (
             <Typography variant="subtitle2" display="flex" alignItems="center" color="primary">

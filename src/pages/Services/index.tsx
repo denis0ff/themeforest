@@ -9,7 +9,7 @@ export default () => (
   <>
     <PageHeader title="Data Analytics Services" subtitle="Services" />
     <SectionWrapper variant="fenced" bgColor="default" pb={8} pt={8}>
-      <Benefits cards={servicesInfo} />
+      <Benefits cards={servicesInfo} maxWidth="100%" />
     </SectionWrapper>
     <Clients />
     <Footer />

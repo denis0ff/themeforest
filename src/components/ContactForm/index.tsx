@@ -56,7 +56,7 @@ export default ({ variant }: Props) => {
           onChange={formik.handleChange}
         />
       ))}
-      <Button type="submit" variant="contained" disabled={disabled}>
+      <Button type="submit" variant="contained" disabled={disabled} sx={{ marginTop: '30px' }}>
         Send
       </Button>
       {message && (

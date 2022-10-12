@@ -5,15 +5,13 @@ import { Props } from './types';
 
 export default ({ current, color }: Props) => {
   return (
-    <Breadcrumbs
-      aria-label="breadcrumb"
-      color={color === 'white' ? 'white' : 'text.primary'}
-      separator="|"
-    >
-      <Link underline="hover" color={color === 'white' ? '#9497A1' : 'inherit'} href="/">
+    <Breadcrumbs aria-label="breadcrumb" color="secondary" separator="|">
+      <Link underline="hover" variant="subtitle1" color="secondary" href="/">
         Home
       </Link>
-      <Typography color={color === 'white' ? 'white' : 'text.primary'}>{current}</Typography>
+      <Typography variant="subtitle2" color={color ? 'white' : 'initial'} component="span">
+        {current}
+      </Typography>
     </Breadcrumbs>
   );
 };

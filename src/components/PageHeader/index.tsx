@@ -16,9 +16,7 @@ export default ({
       <Typography variant="body1" component="span">
         {subtitle}
       </Typography>
-      <Typography variant="h2" component="h2">
-        {title}
-      </Typography>
+      <Typography variant="h1">{title}</Typography>
       <Typography variant="subtitle1" component="p">
         {description}
       </Typography>

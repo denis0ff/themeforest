@@ -8,15 +8,11 @@ import { PriceCard } from './styled';
 export default () => {
   return (
     <SectionWrapper variant="fenced" bgColor="default" direction="column">
-      <Typography variant="h5" component="h5">
-        Our pricing
-      </Typography>
-      <Stack direction="row" spacing={1} mt={6} mb={6}>
+      <Typography variant="h2">Our pricing</Typography>
+      <Stack direction="row" spacing={2} pt={2}>
         {priceInfo.map(({ title, price, possibilities }) => (
           <PriceCard key={title}>
-            <Typography variant="h6" component="h6" p={1}>
-              {title}
-            </Typography>
+            <Typography variant="h6">{title}</Typography>
             <Stack
               direction="row"
               spacing={1}
@@ -25,10 +21,10 @@ export default () => {
               alignItems="center"
               justifyContent="space-between"
             >
-              <Typography variant="h5">{price}</Typography>
+              <Typography variant="h4">{price}</Typography>
               <ToggleGroup toggles={rateToggles} />
             </Stack>
-            <Button variant="contained">Choose Plan</Button>
+            <Button variant="contained">Choose plan</Button>
             <ProsList items={possibilities.map((title) => ({ title: title }))} />
           </PriceCard>
         ))}

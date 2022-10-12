@@ -5,5 +5,5 @@ export type Props = {
     subtitle: string;
     link?: string;
   }>;
-  maxWidth?: string;
+  maxWidth: number | string;
 };

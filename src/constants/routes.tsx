@@ -79,8 +79,8 @@ export const routes = [
 
 export const additionalRoutes = [
   {
-    path: '/home',
-    element: <Home />,
+    path: '/404',
+    element: <NotFound />,
     label: 'Pages',
     isNav: true,
   },

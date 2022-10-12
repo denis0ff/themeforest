@@ -1,24 +1,16 @@
 import { createTheme } from '@mui/material';
 
-const font = 'sans-serif';
-
-const black = '#000000';
+const black = '#292D33';
 const white = '#ffffff';
 const error = '#c86464';
 const primary = '#185CFF';
-const secondary = '#727272';
+const secondary = '#9497A1';
 const border = '#607D94';
 
 export const themeParams = {
-  font,
-  fontColor: black,
   spaces: ['0', '4px', '8px', '16px', '32px', '64px', '128px'],
-  fontSizes: ['12px', '14px', '16px', '20px', '24px', '32px', '40px', '56px'],
-  fontWeights: [200, 400, 600],
   borderRadiuses: ['0', '5px', '10px', '20px'],
-  webkitScrollBarWidth: '5px',
   defaultTransition: '100ms',
-  boxShadow: `0 0 20px 5px ${black}`,
   bgColor: {
     default: white,
     grey: '#F1F6FA',
@@ -30,7 +22,6 @@ export const themeParams = {
   footerHeight: '30%',
   headerHeight: '126px',
   logoSize: ['141px', '46px'],
-  buttonOptions: `width: 185px; height: 54px; background-color: ${primary}; color: ${white}; border: none`,
   colors: {
     primary,
     secondary,
@@ -43,14 +34,81 @@ export const themeParams = {
 
 let theme = createTheme({});
 theme = createTheme({
+  palette: {
+    primary: {
+      main: '#185CFF',
+      contrastText: '#fff',
+    },
+    secondary: {
+      main: '#9497A1',
+      contrastText: '#fff',
+    },
+    success: {
+      main: '#607D94',
+      contrastText: '#fff',
+    },
+    error: {
+      main: '#C14040',
+      contrastText: '#fff',
+    },
+  },
+
   typography: {
-    fontFamily: `"Manrope", "Open Sans", sans-serif`,
+    fontFamily: '"Manrope", "Open Sans", sans-serif',
     fontSize: 14,
-    fontWeightLight: 300,
-    fontWeightRegular: 400,
-    fontWeightMedium: 500,
     allVariants: {
       color: black,
+    },
+    subtitle1: {
+      color: '#9497A1',
+      fontSize: '14px',
+    },
+    subtitle2: {
+      fontSize: '14px',
+      fontWeight: 400,
+    },
+    body1: {
+      color: '#9497A1',
+      fontSize: '16px',
+      fontWeight: 400,
+      lineHeight: '28px',
+    },
+    body2: {
+      fontSize: '16px',
+      fontWeight: 700,
+      lineHeight: '28px',
+    },
+    h1: {
+      fontSize: '46px',
+      fontWeight: 800,
+      lineHeight: '60px',
+    },
+    h2: {
+      fontSize: '38px',
+      fontWeight: 800,
+      lineHeight: '56px',
+    },
+    h3: {
+      fontSize: '30px',
+      fontWeight: 800,
+      lineHeight: '42px',
+    },
+    h4: {
+      fontSize: '22px',
+      fontWeight: 700,
+      lineHeight: '33px',
+    },
+    h5: {
+      fontSize: '20px',
+      fontWeight: 700,
+      lineHeight: '30px',
+    },
+    button: {
+      fontSize: '14px',
+      fontWeight: 600,
+      lineHeight: '24px',
+      color: white,
+      textTransform: 'initial',
     },
   },
 });

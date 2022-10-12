@@ -8,16 +8,14 @@ export default ({ cards, maxWidth }: Props) => (
     columnSpacing={4}
     gap={4}
     gridTemplateColumns="repeat(2, 1fr)"
-    minWidth={540}
+    minWidth={maxWidth}
   >
     {cards.map(({ image, title, subtitle, link }) => (
-      <Card key={image} sx={{ maxWidth: maxWidth || 255 }}>
-        <CardImage image={`${process.env.PUBLIC_URL}/${image}.svg`} />
+      <Card key={image}>
+        <CardImage image={`${process.env.PUBLIC_URL}/assets/${image}.svg`} />
         <CardContent>
-          <Typography variant="h6" component="h6">
-            {title}
-          </Typography>
-          <Typography variant="subtitle2">{subtitle}</Typography>
+          <Typography variant="h5">{title}</Typography>
+          <Typography variant="subtitle1">{subtitle}</Typography>
           {link && <Link>{link}</Link>}
         </CardContent>
       </Card>

@@ -6,6 +6,7 @@ import VideoDialog from '@components/VideoDialog';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 import PlayIcon from '@mui/icons-material/PlayCircleOutline';
+import { NavLink } from 'react-router-dom';
 
 export default () => {
   const [open, setOpen] = useState(false);
@@ -21,7 +22,9 @@ export default () => {
   return (
     <SectionWrapper variant="fenced" bgColor="default">
       <HeaderContainer>
-        <Logo />
+        <NavLink to="/">
+          <Logo image="logo" />
+        </NavLink>
         <NavBar routes={routes} />
         <Button startIcon={<PlayIcon fontSize="large" />} variant="contained" onClick={handleOpen}>
           Watch the demo

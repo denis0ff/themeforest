@@ -45,7 +45,7 @@ export default () => {
             {subtitle}
           </Typography>
           <Typography variant="h4">{title}</Typography>
-          <Post spacing={2} dangerouslySetInnerHTML={{ __html: data }}></Post>
+          <Post color="secondary" spacing={2} dangerouslySetInnerHTML={{ __html: data }} />
           <Stack direction="row" spacing={1} alignItems="center">
             <LocalOfferIcon fontSize="small" />
             <Typography component="span">Tags:</Typography>

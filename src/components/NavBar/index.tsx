@@ -4,7 +4,7 @@ import { Props } from './types';
 
 export default ({ direction = 'row', routes }: Props) => {
   return (
-    <Stack direction={direction} spacing={{ xs: 1, sm: 2, md: 4 }}>
+    <Stack direction={direction} spacing={2}>
       {routes.map(
         ({ path, label, isNav }) =>
           isNav && (

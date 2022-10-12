@@ -5,9 +5,7 @@ import { Props } from './types';
 
 export default ({ title }: Props) => (
   <SectionWrapper variant="none" bgColor="grey" direction="column" pb={8} pt={8} spacing={4}>
-    <Typography variant="h2" component="h2">
-      {title}
-    </Typography>
+    <Typography variant="h1">{title}</Typography>
     <Breadcrumbs current={title} />
   </SectionWrapper>
 );

@@ -9,6 +9,6 @@ export default styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: ${themeParams.fontSizes[3]};
+  padding: ${themeParams.spaces[3]};
   background-color: ${themeParams.colors.error};
 `;

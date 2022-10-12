@@ -12,9 +12,7 @@ export default ({ title, items }: Props) => {
   return (
     <SectionWrapper variant="fenced" bgColor="default" direction="column" mt={8} mb={8}>
       <Header direction="row" spacing={3}>
-        <Typography variant="h5" component="h5">
-          {title}
-        </Typography>
+        <Typography variant="h2">{title}</Typography>
         <Pagination props={props} />
       </Header>
       <BlogList news={showBlog} newsVariant="home" listDirection="row" />

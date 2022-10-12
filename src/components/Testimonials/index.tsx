@@ -10,11 +10,9 @@ export default ({ title, items, count }: Props) => {
   const [showPersons, ...props] = usePagination(items, count);
 
   return (
-    <SectionWrapper variant="fenced" bgColor="default" direction="column" mt={8} mb={8} spacing={6}>
-      <Header direction="row" spacing={3}>
-        <Typography variant="h5" component="h5">
-          {title}
-        </Typography>
+    <SectionWrapper variant="fenced" bgColor="default" direction="column" mb={8} spacing={4}>
+      <Header direction="row" spacing={2}>
+        <Typography variant="h2">{title}</Typography>
         <Pagination props={props} />
       </Header>
       <Stack direction="row" spacing={2}>
