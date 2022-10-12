@@ -1,10 +1,6 @@
+import { blogInfo } from '@constants';
+
 export type Props = {
   title: string;
-  items: Array<{
-    image: string;
-    title: string;
-    subtitle: string;
-    paragraph: string;
-    link: string;
-  }>;
+  items: typeof blogInfo;
 };

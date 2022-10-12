@@ -4,11 +4,11 @@ import { Banner, SectionWrapper } from '@theme';
 import ClientStats from '@components/ClientStats';
 
 export default () => (
-  <SectionWrapper variant="fenced" bgColor="default" direction="column" mt={8} mb={8}>
+  <SectionWrapper variant="fenced" bgColor="default" direction="column" mt={8} mb={8} spacing={4}>
     <Typography variant="h4" component="h4">
       We provide services that guarantee your success
     </Typography>
-    <Stack direction="row" spacing={1}>
+    <Stack direction="row" spacing={4}>
       <ClientStats items={clientsInfo.slice(0, 3)} />
       <Typography variant="subtitle1" component="p">
         Sed ut perspiciatis unde omnis iste natus error sit voluptat accusantium doloremque

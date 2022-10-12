@@ -9,8 +9,8 @@ export default () => {
   return (
     <Router>
       <ThemeProvider theme={theme}>
-        <Header />
         <ErrorBoundary fallback="Something went wrong. Try to reload the page">
+          <Header />
           <Routes>
             {routes.map(({ path, element }) => (
               <Route key={path} path={path} element={element} />

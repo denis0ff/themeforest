@@ -1,4 +1,29 @@
-export const socials = ['social-1', 'social-2', 'social-3', 'social-4', 'social-5', 'social-6'];
+export const socials = [
+  {
+    image: 'social-1',
+    href: 'https://www.google.com/search?q=behance',
+  },
+  {
+    image: 'social-2',
+    href: 'https://www.google.com/search?q=twitter',
+  },
+  {
+    image: 'social-3',
+    href: 'https://www.google.com/search?q=linkedin',
+  },
+  {
+    image: 'social-4',
+    href: 'https://www.google.com/search?q=youtube',
+  },
+  {
+    image: 'social-5',
+    href: 'https://www.google.com/search?q=dribble',
+  },
+  {
+    image: 'social-6',
+    href: 'https://www.google.com/search?q=facebook',
+  },
+];
 
 export const contacts = [
   {

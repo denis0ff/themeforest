@@ -11,7 +11,7 @@ export default () => (
       subtitle="Blog"
       description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo."
     />
-    <BlogList news={MOCK_MANY_NEWS} />
+    <BlogList news={MOCK_MANY_NEWS} newsVariant="blog" listDirection="column" />
     <Subscribe />
     <FooterLinks />
   </>

@@ -1,10 +1,10 @@
-import { Stack, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 import { Header } from './styled';
 import { Props } from './types';
 import { usePagination } from '@hooks';
 import Pagination from '@components/Pagination';
-import BlogCard from '@components/HomeBlogCard';
 import { SectionWrapper } from '@theme';
+import BlogList from '@components/BlogList';
 
 export default ({ title, items }: Props) => {
   const [showBlog, ...props] = usePagination(items, 3);
@@ -17,11 +17,7 @@ export default ({ title, items }: Props) => {
         </Typography>
         <Pagination props={props} />
       </Header>
-      <Stack direction="row" spacing={2}>
-        {showBlog.map((props) => (
-          <BlogCard key={props.title} {...props} />
-        ))}
-      </Stack>
+      <BlogList news={showBlog} newsVariant="home" listDirection="row" />
     </SectionWrapper>
   );
 };

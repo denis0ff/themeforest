@@ -10,7 +10,7 @@ export const usePortionedPagination = <T>(
     array.slice(0, page * maxCount)
   );
 
-  useEffect(() => setItems(), [page]);
+  useEffect(() => setItems(), [page, array]);
 
   return [items, setPage];
 };

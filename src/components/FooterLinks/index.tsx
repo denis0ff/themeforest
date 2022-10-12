@@ -22,8 +22,8 @@ export default () => {
             laboriosam, nisi ut aliquid ex ea commodi.
           </Typography>
           <Stack direction="row" spacing={1}>
-            {socials.map((social) => (
-              <Social key={social} path={social} />
+            {socials.map(({ image, href }) => (
+              <Social href={href} key={href} path={image} target="_blank" />
             ))}
           </Stack>
         </Stack>

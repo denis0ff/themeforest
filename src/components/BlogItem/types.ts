@@ -1,3 +1,7 @@
 import { blogInfo } from '@constants';
 
-export type Props = typeof blogInfo[0];
+type Item = typeof blogInfo[0];
+
+export interface Props extends Item {
+  variant: 'home' | 'blog' | 'related' | 'popular';
+}

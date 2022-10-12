@@ -9,11 +9,11 @@ export const Logo = styled.div<{ isWhite?: boolean }>`
     isWhite ? 'white_logo' : 'logo'}.svg);
 `;
 
-export const Social = styled.div<{ path: string }>`
+export const Social = styled.a<{ path: string }>`
   width: 24px;
   height: 24px;
   cursor: pointer;
-  background-image: url(${process.env.PUBLIC_URL}/${({ path }) => path}.svg);
+  background: center / contain no-repeat url(${process.env.PUBLIC_URL}/${({ path }) => path}.svg);
 `;
 
 export const SectionWrapper = styled(Stack)<{

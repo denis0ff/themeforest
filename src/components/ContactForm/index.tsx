@@ -1,21 +1,28 @@
-import { Button, TextField } from '@mui/material';
+import { Button, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik';
-import { contactFields } from '@constants';
+import { contactFields, sendEmailSchema } from '@constants';
 import { InitialFormValues } from '@types';
 import { Props } from './types';
 import emailjs from '@emailjs/browser';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 export default ({ variant }: Props) => {
-  const initialValues = contactFields.reduce<InitialFormValues>((acc, { label }) => {
-    acc[label] = '';
+  const [message, setMessage] = useState('');
+  const [disabled, setDisabled] = useState(false);
+
+  const initialValues = contactFields.reduce<InitialFormValues>((acc, { name }) => {
+    acc[name] = '';
     return acc;
   }, {});
   const form = useRef<HTMLFormElement>(null);
 
   const formik = useFormik({
     initialValues,
+    validationSchema: sendEmailSchema,
+    validateOnChange: false,
+    validateOnBlur: false,
     onSubmit: () => {
+      setDisabled(true);
       emailjs
         .sendForm(
           process.env.REACT_APP_EMAIL_SERVICE_ID as string,
@@ -24,19 +31,16 @@ export default ({ variant }: Props) => {
           process.env.REACT_APP_EMAIL_PUBLIC_KEY as string
         )
         .then(
-          (result) => {
-            console.log(result.text);
-          },
-          (error) => {
-            console.log(error.text);
-          }
-        );
+          () => setMessage('success'),
+          () => setMessage('error')
+        )
+        .finally(() => setDisabled(false));
     },
   });
 
   return (
     <form ref={form} onSubmit={formik.handleSubmit}>
-      {contactFields.map(({ label, name, text, placeholder }) => (
+      {contactFields.map(({ label, name, placeholder }) => (
         <TextField
           key={name}
           autoComplete="off"
@@ -45,14 +49,21 @@ export default ({ variant }: Props) => {
           name={name}
           label={label}
           variant="standard"
-          defaultValue={text}
           placeholder={placeholder}
+          value={formik.values[name]}
+          error={formik.touched[name] && Boolean(formik.errors[name])}
+          helperText={formik.errors[name]}
           onChange={formik.handleChange}
         />
       ))}
-      <Button type="submit" variant="contained">
+      <Button type="submit" variant="contained" disabled={disabled}>
         Send
       </Button>
+      {message && (
+        <Typography color={message} variant="subtitle2">
+          {message}
+        </Typography>
+      )}
     </form>
   );
 };

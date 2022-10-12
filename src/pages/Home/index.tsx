@@ -8,12 +8,16 @@ import Pricing from '@components/Pricing';
 import Blog from '@components/HomeBlog';
 import Footer from '@components/Footer';
 import Clients from '@components/Clients';
+import { Link } from 'react-router-dom';
 
 export default () => (
   <>
     <SectionWrapper variant="fenced" bgColor="default" direction="row" mt={8} mb={8}>
       <Typography variant="h2" component="h2">
-        Find true power in your data with <span>Ensome</span>
+        Find true power in your data with{' '}
+        <Typography variant="h2" component="span" color="primary">
+          Ensome
+        </Typography>
       </Typography>
       <Typography variant="subtitle1" component="p">
         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque lauda,
@@ -30,7 +34,11 @@ export default () => (
     </SectionWrapper>
     <SectionWrapper variant="fenced" bgColor="default" direction="row" mt={8} mb={8}>
       <Typography variant="h2" component="h2">
-        The <span>newest</span> business analytics platform
+        The{' '}
+        <Typography variant="h2" component="span" color="primary">
+          newest
+        </Typography>{' '}
+        business analytics platform
       </Typography>
       <div>
         <Typography variant="subtitle1" component="p">
@@ -38,7 +46,9 @@ export default () => (
           laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
           architecto beatae vitae dicta sunt explicabo.
         </Typography>
-        <Button variant="contained">Discover more</Button>
+        <Link to="/solutions">
+          <Button variant="contained">Discover more</Button>
+        </Link>
       </div>
     </SectionWrapper>
     <SectionWrapper variant="none" bgColor="grey" direction="row" mt={8} mb={8}>

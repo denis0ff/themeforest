@@ -1,4 +1,3 @@
-import Breadcrumbs from '@components/Breadcrumbs';
 import { Stack, Typography } from '@mui/material';
 import { Banner, SectionWrapper } from '@theme';
 import { AboutInfos, clientsInfo, contacts, testimonialsInfo } from '@constants';
@@ -7,15 +6,11 @@ import ClientStats from '@components/ClientStats';
 import Testimonials from '@components/Testimonials';
 import Footer from '@components/Footer';
 import ContactForm from '@components/ContactForm';
+import PageHeader2 from '@components/PageHeader2';
 
 export default () => (
   <>
-    <SectionWrapper variant="none" bgColor="grey" direction="column" pb={8} pt={8} spacing={4}>
-      <Typography variant="h2" component="h2">
-        About Us
-      </Typography>
-      <Breadcrumbs current="About Us" />
-    </SectionWrapper>
+    <PageHeader2 title="About Us" />
     <SectionWrapper variant="none" bgColor="default" direction="column" pb={8} pt={8} spacing={4}>
       {AboutInfos.map((props, i) => (
         <AboutInfo key={props.title} {...props} isMirror={i % 2 !== 0} />

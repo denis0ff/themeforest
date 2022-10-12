@@ -1,23 +1,35 @@
+import TagList from '@components/TagList';
 import { Stack, Typography } from '@mui/material';
 import { Banner } from '@theme';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Props } from './types';
+import ArrowRight from '@mui/icons-material/ArrowRightAlt';
+import { getImageSize, sliceParagraph } from '@utils';
 
-export default ({ image, title, paragraph, tags }: Props) => (
-  <NavLink to="/blog/:id">
-    <Stack direction="row" alignItems="center" spacing={3}>
-      <Banner image={image} width="350" height="200" />
-      <div>
-        <Typography variant="h6" component="h6">
-          {title}
-        </Typography>
-        <Typography variant="subtitle2">{paragraph}</Typography>
-        <Stack direction="row" spacing={1} mt={4}>
-          {tags.map((tag) => (
-            <span key={tag}>{tag}</span>
-          ))}
-        </Stack>
-      </div>
-    </Stack>
-  </NavLink>
-);
+export default ({ id, image, title, subtitle, paragraph, tags, variant }: Props) => {
+  const direction = variant === 'home' ? 'column' : 'row';
+  const isParagraph = variant === 'home' || variant === 'related';
+  const isTag = variant === 'blog';
+  const isLink = variant === 'home' || variant === 'popular';
+
+  return (
+    <Link to={`/blog/${id}`}>
+      <Stack direction={direction} alignItems="center" spacing={3} width="100%">
+        <Banner image={image} {...getImageSize(variant)} />
+        <div>
+          <Typography variant="subtitle1">{subtitle}</Typography>
+          <Typography variant="h6" component="h6">
+            {title}
+          </Typography>
+          {isParagraph && <Typography variant="subtitle2">{sliceParagraph(paragraph)}</Typography>}
+          {isTag && <TagList tags={tags} />}
+          {isLink && (
+            <Typography variant="subtitle2" display="flex" alignItems="center" color="primary">
+              Read more <ArrowRight />
+            </Typography>
+          )}
+        </div>
+      </Stack>
+    </Link>
+  );
+};
