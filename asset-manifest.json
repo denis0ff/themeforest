@@ -1,10 +1,13 @@
 {
   "files": {
+    "main.css": "/themeforest/static/css/main.8a814dcc.css",
     "main.js": "/themeforest/static/js/main.74342642.js",
     "index.html": "/themeforest/index.html",
+    "main.8a814dcc.css.map": "/themeforest/static/css/main.8a814dcc.css.map",
     "main.74342642.js.map": "/themeforest/static/js/main.74342642.js.map"
   },
   "entrypoints": [
+    "static/css/main.8a814dcc.css",
     "static/js/main.74342642.js"
   ]
 }
