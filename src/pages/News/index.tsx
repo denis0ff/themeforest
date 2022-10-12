@@ -16,7 +16,7 @@ export default () => {
   const { id: newsId } = useParams();
   const item = blogInfo.find(({ id }) => id === newsId);
 
-  if (!item) return <Navigate to="/404" />;
+  if (!item) return <Navigate to="/themeforest/404" />;
 
   const { title, data, image, subtitle, tags, id } = item;
 

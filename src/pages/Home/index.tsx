@@ -8,7 +8,7 @@ import Pricing from '@components/Pricing';
 import Blog from '@components/HomeBlog';
 import Footer from '@components/Footer';
 import Clients from '@components/Clients';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default () => (
   <>
@@ -26,7 +26,7 @@ export default () => (
     </SectionWrapper>
     <SectionWrapper variant="none" bgColor="default">
       <Banner image="home1" height="590">
-        <CircleLink to="/services">
+        <CircleLink to="/themeforest/services">
           Learn more
           <div></div>
         </CircleLink>
@@ -46,9 +46,9 @@ export default () => (
           laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
           architecto beatae vitae dicta sunt explicabo.
         </Typography>
-        <Link to="/solutions">
+        <NavLink to="/themeforest/solutions">
           <Button variant="contained">Discover more</Button>
-        </Link>
+        </NavLink>
       </div>
     </SectionWrapper>
     <SectionWrapper variant="none" bgColor="grey" direction="row" mt={8} mb={8}>
@@ -61,7 +61,9 @@ export default () => (
             laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
             architecto beatae vitae dicta sunt explicabo.
           </Typography>
-          <Button variant="contained">Learn more</Button>
+          <NavLink to="/themeforest/solutions">
+            <Button variant="contained">Learn more</Button>
+          </NavLink>
         </Stack>
       </Box>
     </SectionWrapper>

@@ -1,6 +1,11 @@
 import path from 'path';
 
 module.exports = {
+  babel: {
+    loaderOptions: {
+      ignore: ['./node_modules/mapbox-gl/dist/mapbox-gl.js'],
+    },
+  },
   webpack: {
     alias: {
       '@components': path.resolve(__dirname, 'src/components'),

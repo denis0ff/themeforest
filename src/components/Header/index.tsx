@@ -3,7 +3,7 @@ import { Logo, SectionWrapper } from '@theme';
 import { routes } from '@constants';
 import { HeaderContainer } from './styled';
 import VideoDialog from '@components/VideoDialog';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { Button } from '@mui/material';
 import PlayIcon from '@mui/icons-material/PlayCircleOutline';
 import { NavLink } from 'react-router-dom';
@@ -11,13 +11,13 @@ import { NavLink } from 'react-router-dom';
 export default () => {
   const [open, setOpen] = useState(false);
 
-  const handleOpen = () => {
+  const handleOpen = useCallback(() => {
     setOpen(true);
-  };
+  }, []);
 
-  const handleClose = () => {
+  const handleClose = useCallback(() => {
     setOpen(false);
-  };
+  }, []);
 
   return (
     <SectionWrapper variant="fenced" bgColor="default">

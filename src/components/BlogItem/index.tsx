@@ -13,7 +13,7 @@ export default ({ id, image, title, subtitle, paragraph, tags, variant }: Props)
   const isLink = variant === 'home' || variant === 'popular';
 
   return (
-    <Link to={`/blog/${id}`}>
+    <Link to={`/themeforest/blog/${id}`}>
       <Stack direction={direction} alignItems="center" spacing={3} width="100%">
         <Banner image={image} {...getImageSize(variant)} />
         <div>

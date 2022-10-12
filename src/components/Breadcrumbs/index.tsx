@@ -6,7 +6,7 @@ import { Props } from './types';
 export default ({ current, color }: Props) => {
   return (
     <Breadcrumbs aria-label="breadcrumb" color="secondary" separator="|">
-      <Link underline="hover" variant="subtitle1" color="secondary" href="/">
+      <Link underline="hover" variant="subtitle1" color="secondary" href="/themeforest">
         Home
       </Link>
       <Typography variant="subtitle2" color={color ? 'white' : 'initial'} component="span">
