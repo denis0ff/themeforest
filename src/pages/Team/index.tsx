@@ -2,7 +2,7 @@ import Breadcrumbs from '@components/Breadcrumbs';
 import TeamBox from '@components/TeamBox';
 import { Stack, Typography } from '@mui/material';
 import { SectionWrapper } from '@theme';
-import { MOCK_MANY_DEVELOPERS } from '@constants';
+import { teamInfo } from '@constants';
 import Subscribe from '@components/Subscribe';
 import FooterLinks from '@components/FooterLinks';
 
@@ -34,7 +34,7 @@ export default () => (
         </Stack>
       </SectionWrapper>
     </SectionWrapper>
-    <TeamBox persons={MOCK_MANY_DEVELOPERS} />
+    <TeamBox persons={teamInfo} />
     <Subscribe />
     <FooterLinks />
   </>

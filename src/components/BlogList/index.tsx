@@ -1,20 +1,16 @@
 import BlogItem from '@components/BlogItem';
 import { SectionWrapper } from '@theme';
-import { usePortionedPagination } from '@hooks';
+import { useBlogOptions } from '@hooks';
 import { Props } from './types';
 import { Button, Typography } from '@mui/material';
-import { getPostsTitle } from '@utils';
 
 export default ({ news, listDirection, newsVariant }: Props) => {
-  const portionSize = newsVariant === 'home' || newsVariant === 'blog' ? 9 : 3;
-  const [portion, setPage] = usePortionedPagination(news, portionSize);
-  const isButton = newsVariant === 'blog' && news.length !== portion.length;
-  const title = getPostsTitle(newsVariant);
+  const { portion, isButton, title, sectionVariant, setPage } = useBlogOptions(news, newsVariant);
 
   return (
     <SectionWrapper
       direction={listDirection}
-      variant="fenced"
+      variant={sectionVariant}
       bgColor="default"
       spacing={4}
       alignItems="flex-start"
@@ -22,8 +18,8 @@ export default ({ news, listDirection, newsVariant }: Props) => {
       mt={4}
     >
       {title && !!news.length && <Typography variant="h6">{title}</Typography>}
-      {portion.map((props, i) => (
-        <BlogItem key={props.id + String(i)} {...props} variant={newsVariant} />
+      {portion.map((props) => (
+        <BlogItem key={props.id} {...props} variant={newsVariant} />
       ))}
       {isButton && (
         <Button variant="contained" onClick={setPage} sx={{ alignSelf: 'center' }}>

@@ -1,18 +1,40 @@
 import BlogList from '@components/BlogList';
 import FooterLinks from '@components/FooterLinks';
 import PageHeader from '@components/PageHeader';
+import SearchBar from '@components/SearchBar';
 import Subscribe from '@components/Subscribe';
-import { MOCK_MANY_NEWS } from '@constants';
+import { blogInfo } from '@constants';
+import { Typography } from '@mui/material';
+import { useCallback, useDeferredValue, useMemo, useState } from 'react';
 
-export default () => (
-  <>
-    <PageHeader
-      title="Discover new things with Ensome blog"
-      subtitle="Blog"
-      description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo."
-    />
-    <BlogList news={MOCK_MANY_NEWS} newsVariant="blog" listDirection="column" />
-    <Subscribe />
-    <FooterLinks />
-  </>
-);
+export default () => {
+  const [searchValue, setSearchValue] = useState('');
+  const defferedValue = useDeferredValue(searchValue);
+
+  const handleChangeValue = useCallback((value: string) => setSearchValue(value), []);
+
+  const filteredNews = useMemo(
+    () => blogInfo.filter(({ title }) => title.toLowerCase().includes(defferedValue)),
+    [defferedValue]
+  );
+
+  return (
+    <>
+      <PageHeader
+        title="Discover new things with Ensome blog"
+        subtitle="Blog"
+        description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo."
+      />
+      <SearchBar value={searchValue} setValue={handleChangeValue} />
+      {filteredNews.length ? (
+        <BlogList news={filteredNews} newsVariant="blog" listDirection="column" />
+      ) : (
+        <Typography textAlign="center" p={4}>
+          Nothing was found
+        </Typography>
+      )}
+      <Subscribe />
+      <FooterLinks />
+    </>
+  );
+};

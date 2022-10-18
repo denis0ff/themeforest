@@ -1,7 +1,7 @@
 import { blogInfo } from '@constants';
 import { FormFieldData, InitialFormValues } from '@types';
 
-export const sliceParagraph = (p: string, length = 165) =>
+export const sliceTextWithDots = (p: string, length = 165) =>
   `${p.slice(0, length)}${length <= p.length ? '...' : ''}`;
 
 const sortByRate = (a: { rate: string }, b: { rate: string }) => +b.rate - +a.rate;
@@ -24,6 +24,8 @@ export const getImageSize = (variant: string) => {
       return { width: '190', height: '114' };
     case 'related':
       return { width: '215', height: '171' };
+    case 'search-bar':
+      return { width: '100', height: '65' };
     default:
       return { width: '350', height: '200' };
   }
@@ -66,4 +68,14 @@ export const parsePriceValue = (value: string) => {
     default:
       return Number(value.replace(/[^0-9]/, '')).toString();
   }
+};
+
+export const getNewsOptions = (variant: string) => {
+  const direction: 'column' | 'row' = variant === 'home' ? 'column' : 'row';
+  const isParagraph = variant === 'home' || variant === 'related' || variant !== 'search-bar';
+  const isTag = variant === 'blog';
+  const isLink = variant === 'home' || variant === 'popular';
+  const isSubtitle = variant !== 'search-bar';
+  const titleVariant: 'body1' | 'h4' = variant === 'search-bar' ? 'body1' : 'h4';
+  return { direction, isLink, isParagraph, isTag, isSubtitle, titleVariant };
 };

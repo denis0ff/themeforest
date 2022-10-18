@@ -11,6 +11,7 @@ import TagList from '@components/TagList';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import BlogList from '@components/BlogList';
 import { getPopularNews, getRelatedNews } from '@utils';
+import SearchBarNavigation from '@components/SearchBarNavigation';
 
 export default () => {
   const { id: newsId } = useParams();
@@ -52,11 +53,14 @@ export default () => {
             <TagList tags={tags} />
           </Stack>
         </Stack>
-        <BlogList
-          news={getPopularNews(blogInfo, id)}
-          newsVariant="popular"
-          listDirection="column"
-        />
+        <Stack>
+          <SearchBarNavigation />
+          <BlogList
+            news={getPopularNews(blogInfo, id)}
+            newsVariant="popular"
+            listDirection="column"
+          />
+        </Stack>
       </SectionWrapper>
       <BlogList
         news={getRelatedNews(blogInfo, id, tags)}
