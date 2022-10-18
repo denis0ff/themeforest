@@ -1,4 +1,5 @@
 import { blogInfo } from '@constants';
+import { FormFieldData, InitialFormValues } from '@types';
 
 export const sliceParagraph = (p: string, length = 165) =>
   `${p.slice(0, length)}${length <= p.length ? '...' : ''}`;
@@ -36,5 +37,33 @@ export const getPostsTitle = (variant: string) => {
       return 'Related posts';
     default:
       return null;
+  }
+};
+
+export const parseDuration = (value: string) => {
+  switch (value) {
+    case 'Mo':
+      return '1 month';
+    case 'Yr':
+      return '1 year';
+    default:
+      return '';
+  }
+};
+
+export const reduceFieldsName = (array: FormFieldData[]) =>
+  array.reduce<InitialFormValues>((acc, { name }) => {
+    acc[name] = '';
+    return acc;
+  }, {});
+
+export const parsePriceValue = (value: string) => {
+  switch (value) {
+    case 'Custom':
+      return '0.01';
+    case '$00':
+      return '0.01';
+    default:
+      return Number(value.replace(/[^0-9]/, '')).toString();
   }
 };

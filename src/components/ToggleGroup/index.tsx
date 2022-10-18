@@ -1,10 +1,7 @@
 import { ToggleButtonGroup, ToggleButton } from '@mui/material';
-import { useState } from 'react';
 import { Props } from './types';
 
-export default ({ toggles }: Props) => {
-  const [picked, setPicked] = useState(toggles[0]);
-
+export default ({ toggles, picked, setPicked }: Props) => {
   const handleAlignment = (event: React.MouseEvent<HTMLElement>, newPicked: string) => {
     setPicked(newPicked);
   };

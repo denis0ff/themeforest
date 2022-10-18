@@ -103,12 +103,22 @@ theme = createTheme({
       fontWeight: 700,
       lineHeight: '30px',
     },
+    h6: {
+      fontSize: '16px',
+      fontWeight: 700,
+      lineHeight: '24px',
+    },
     button: {
       fontSize: '14px',
       fontWeight: 600,
       lineHeight: '24px',
       color: white,
       textTransform: 'initial',
+    },
+  },
+  transitions: {
+    duration: {
+      standard: 300,
     },
   },
 });

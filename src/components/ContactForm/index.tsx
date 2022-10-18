@@ -1,26 +1,22 @@
 import { Button, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import { contactFields, sendEmailSchema } from '@constants';
-import { InitialFormValues } from '@types';
 import { Props } from './types';
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
+import { reduceFieldsName } from '@utils';
 
 export default ({ variant }: Props) => {
   const [message, setMessage] = useState('');
   const [disabled, setDisabled] = useState(false);
 
-  const initialValues = contactFields.reduce<InitialFormValues>((acc, { name }) => {
-    acc[name] = '';
-    return acc;
-  }, {});
+  const initialValues = reduceFieldsName(contactFields);
+
   const form = useRef<HTMLFormElement>(null);
 
   const formik = useFormik({
     initialValues,
     validationSchema: sendEmailSchema,
-    validateOnChange: false,
-    validateOnBlur: false,
     onSubmit: () => {
       setDisabled(true);
       emailjs
@@ -40,7 +36,7 @@ export default ({ variant }: Props) => {
 
   return (
     <form ref={form} onSubmit={formik.handleSubmit}>
-      {contactFields.map(({ label, name, placeholder }) => (
+      {contactFields.map(({ label, name, placeholder, type }) => (
         <TextField
           key={name}
           autoComplete="off"
@@ -48,6 +44,7 @@ export default ({ variant }: Props) => {
           margin="dense"
           name={name}
           label={label}
+          type={type}
           variant="standard"
           placeholder={placeholder}
           value={formik.values[name]}
@@ -60,7 +57,7 @@ export default ({ variant }: Props) => {
         Send
       </Button>
       {message && (
-        <Typography color={message} variant="subtitle2">
+        <Typography color={message} variant="subtitle2" textTransform="capitalize">
           {message}
         </Typography>
       )}
