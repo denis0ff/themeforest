@@ -1,3 +1,6 @@
-import { priceInfo } from '@constants';
+import { AlertHookSetterType, PriceInfo } from '@types';
 
-export type Props = typeof priceInfo[0];
+export interface Props extends PriceInfo {
+  setErrorSubmit: AlertHookSetterType;
+  setSuccessSubmit: AlertHookSetterType;
+}

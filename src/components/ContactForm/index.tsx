@@ -1,15 +1,16 @@
-import { Button, TextField, Typography } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import { useFormik } from 'formik';
 import { contactFields, sendEmailSchema } from '@constants';
 import { Props } from './types';
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
 import { reduceFieldsName } from '@utils';
+import { useAlertMessage } from '@hooks';
+import AlertMessage from '@components/AlertMessage';
 
 export default ({ variant }: Props) => {
-  const [message, setMessage] = useState('');
+  const [alertProps, setSuccess, setError] = useAlertMessage(5000);
   const [disabled, setDisabled] = useState(false);
-
   const initialValues = reduceFieldsName(contactFields);
 
   const form = useRef<HTMLFormElement>(null);
@@ -17,7 +18,7 @@ export default ({ variant }: Props) => {
   const formik = useFormik({
     initialValues,
     validationSchema: sendEmailSchema,
-    onSubmit: () => {
+    onSubmit: (_, { resetForm }) => {
       setDisabled(true);
       emailjs
         .sendForm(
@@ -27,8 +28,19 @@ export default ({ variant }: Props) => {
           process.env.REACT_APP_EMAIL_PUBLIC_KEY as string
         )
         .then(
-          () => setMessage('success'),
-          () => setMessage('error')
+          () => {
+            setSuccess({
+              title: 'Success',
+              description:
+                'The message was sent. Thank you, we will reply to you as soon as possible',
+            });
+            resetForm();
+          },
+          () =>
+            setError({
+              title: 'Error',
+              description: 'Service is unavailable. Please try to send a message later',
+            })
         )
         .finally(() => setDisabled(false));
     },
@@ -56,11 +68,7 @@ export default ({ variant }: Props) => {
       <Button type="submit" variant="contained" disabled={disabled} sx={{ marginTop: '30px' }}>
         Send
       </Button>
-      {message && (
-        <Typography color={message} variant="subtitle2" textTransform="capitalize">
-          {message}
-        </Typography>
-      )}
+      {alertProps.severity && <AlertMessage {...alertProps} />}
     </form>
   );
 };

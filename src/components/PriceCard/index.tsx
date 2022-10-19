@@ -7,7 +7,8 @@ import { parseDuration } from '@utils';
 import { PriceCard } from './styled';
 import { Props } from './types';
 
-export default ({ title, price, durations, possibilities }: Props) => {
+export default (props: Props) => {
+  const { title, price, durations, possibilities } = props;
   const [open, setOpen] = useState(false);
   const [pickedDuration, setPickedDuration] = useState(durations[0]);
 
@@ -40,13 +41,11 @@ export default ({ title, price, durations, possibilities }: Props) => {
       <Button variant="contained" onClick={handleOpen}>
         Choose plan
       </Button>
-      <ProsList items={possibilities.map((title) => ({ title: title }))} />
+      <ProsList items={possibilities.map((title) => ({ title }))} />
       <PriceDialog
+        {...props}
         open={open}
         handleClose={handleClose}
-        title={title}
-        price={price}
-        possibilities={possibilities}
         duration={parseDuration(pickedDuration)}
       />
     </PriceCard>

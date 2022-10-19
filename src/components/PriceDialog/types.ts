@@ -1,9 +1,9 @@
-import { priceInfo } from '@constants';
+import { AlertHookSetterType, PriceInfo } from '@types';
 
-type Options = typeof priceInfo[0];
-
-export interface Props extends Omit<Options, 'durations'> {
+export interface Props extends Omit<PriceInfo, 'durations'> {
   duration: string;
   open: boolean;
   handleClose: () => void;
+  setErrorSubmit: AlertHookSetterType;
+  setSuccessSubmit: AlertHookSetterType;
 }

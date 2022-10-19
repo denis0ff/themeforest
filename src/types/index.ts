@@ -1,3 +1,7 @@
+import { priceInfo } from '@constants';
+export * from './hooks';
+export * from './props';
+
 export type ClientStat = {
   label: string;
   info: string;
@@ -13,3 +17,5 @@ export type FormFieldData = {
   placeholder: string;
   type: string;
 };
+
+export type PriceInfo = typeof priceInfo[0];

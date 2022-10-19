@@ -2,7 +2,7 @@ import { Props } from './types';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import PayPalButtons from '@components/PayPalButtons';
 
-export default ({ value, handleClose }: Props) => {
+export default ({ value, handleClose, setErrorSubmit, setSuccessSubmit }: Props) => {
   return (
     <PayPalScriptProvider
       deferLoading
@@ -11,7 +11,12 @@ export default ({ value, handleClose }: Props) => {
         components: 'buttons',
       }}
     >
-      <PayPalButtons value={value} handleClose={handleClose} />
+      <PayPalButtons
+        value={value}
+        handleClose={handleClose}
+        setErrorSubmit={setErrorSubmit}
+        setSuccessSubmit={setSuccessSubmit}
+      />
     </PayPalScriptProvider>
   );
 };

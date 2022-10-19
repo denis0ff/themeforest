@@ -1,4 +1,3 @@
-export type Props = {
-  value: string;
-  handleClose: () => void;
-};
+import { PayPalFormProps } from '@types';
+
+export type Props = PayPalFormProps;

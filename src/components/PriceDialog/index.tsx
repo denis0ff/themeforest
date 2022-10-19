@@ -4,7 +4,16 @@ import { Dialog, Stack, Typography } from '@mui/material';
 import { parsePriceValue } from '@utils';
 import { Props } from './types';
 
-export default ({ title, price, possibilities, duration, open, handleClose }: Props) => (
+export default ({
+  title,
+  price,
+  possibilities,
+  duration,
+  open,
+  handleClose,
+  setErrorSubmit,
+  setSuccessSubmit,
+}: Props) => (
   <Dialog open={open} onClose={handleClose}>
     <Stack spacing={2} p={4}>
       <Typography variant="h5">Payment</Typography>
@@ -27,7 +36,12 @@ export default ({ title, price, possibilities, duration, open, handleClose }: Pr
         </Typography>
       </Typography>
       <ProsList items={possibilities.map((title) => ({ title: title }))} />
-      <PaymentForm value={parsePriceValue(price)} handleClose={handleClose} />
+      <PaymentForm
+        value={parsePriceValue(price)}
+        handleClose={handleClose}
+        setErrorSubmit={setErrorSubmit}
+        setSuccessSubmit={setSuccessSubmit}
+      />
     </Stack>
   </Dialog>
 );
