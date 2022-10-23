@@ -1,31 +1,35 @@
 import PersonCard from '@components/PersonCard';
 import { SectionWrapper } from '@theme';
-import { useRef, useCallback, useEffect } from 'react';
-import { usePortionedPagination } from '@hooks';
-import { GridBox } from './styled';
+import { useState } from 'react';
 import { Props } from './types';
+import { Masonry, useInfiniteLoader } from 'masonic';
+import { getFakeItems, getFakeItemsPromise } from '@utils';
 
 export default ({ persons }: Props) => {
-  const [portion, setPage] = usePortionedPagination(persons, 9);
-  const loader = useRef(null);
-
-  const handleObserver = useCallback(([entry]: IntersectionObserverEntry[]) => {
-    if (entry.isIntersecting) setPage();
-  }, []);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver);
-    if (loader.current) observer.observe(loader.current);
-  }, [handleObserver]);
+  const [items, setItems] = useState(getFakeItems(0, 9, persons));
+  const loadMore = useInfiniteLoader(
+    async (startIndex, stopIndex) => {
+      const nextItems = await getFakeItemsPromise(startIndex, stopIndex, persons);
+      setItems((current) => [...current, ...nextItems]);
+    },
+    {
+      isItemLoaded: (index, items) => !!items[index],
+      minimumBatchSize: 9,
+      threshold: 3,
+    }
+  );
 
   return (
-    <SectionWrapper bgColor="default" variant="fenced">
-      <GridBox gridTemplateColumns="repeat(3, 1fr)" rowSpacing={4} columnSpacing={4} gap={4}>
-        {portion.map((props, i) => (
-          <PersonCard key={props.title + i} {...props} isMargin={i === 1 || (i - 1) % 3 === 0} />
-        ))}
-        <div ref={loader} />
-      </GridBox>
+    <SectionWrapper bgColor="default" variant="fenced" pt={8} pb={8}>
+      <Masonry
+        onRender={loadMore}
+        items={items}
+        rowGutter={30}
+        columnWidth={350}
+        overscanBy={1.25}
+        render={PersonCard}
+        maxColumnCount={3}
+      />
     </SectionWrapper>
   );
 };

@@ -1,6 +1,5 @@
+import { teamInfo } from 'src/constants';
+
 export type Props = {
-  image: string;
-  title: string;
-  subtitle: string;
-  isMargin: boolean;
+  data: typeof teamInfo[0];
 };

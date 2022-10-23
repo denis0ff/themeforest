@@ -1,22 +1,26 @@
+import React from 'react';
 import { Typography } from '@mui/material';
-import { Stack } from '@mui/system';
-import { useReducer } from 'react';
-import { Container } from './styled';
+import { Container, FaqTitle } from './styled';
 import { Props } from './types';
 import AddIcon from '@mui/icons-material/Add';
 
-export default ({ title, description }: Props) => {
-  const [isOpen, setIsOpen] = useReducer((prev) => !prev, false);
-
+const FaqItem = ({ isActive, title, description, handleClick }: Props) => {
   return (
     <Container variant="outlined">
-      <Stack direction="row" alignItems="center" justifyContent="space-between" onClick={setIsOpen}>
-        <Typography variant="h6" color={isOpen ? 'primary' : 'default'}>
+      <FaqTitle
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+        onClick={handleClick}
+      >
+        <Typography variant="h6" color={isActive ? 'primary' : 'default'}>
           {title}
         </Typography>
-        <AddIcon color={isOpen ? 'primary' : 'inherit'} />
-      </Stack>
-      {isOpen && <Typography variant="subtitle1">{description}</Typography>}
+        <AddIcon color={isActive ? 'primary' : 'inherit'} />
+      </FaqTitle>
+      {isActive && <Typography variant="subtitle1">{description}</Typography>}
     </Container>
   );
 };
+
+export default React.memo(FaqItem);

@@ -46,6 +46,7 @@ export const benefitsInfo = [
 
 export const testimonialsInfo = [
   {
+    id: 'person-1',
     image: 'person3',
     title: 'Alex Bern',
     subtitle: 'CEO by PixelPerfect',
@@ -53,6 +54,7 @@ export const testimonialsInfo = [
       '“Ut enim ad minima veniam, quis nostrum exercitationem ullam corpor suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis utem vel eum iure reprehender qui in ea voluptate velit esse quam nihil molesti consequatur, vel illum.” ',
   },
   {
+    id: 'person-2',
     image: 'person2',
     title: 'Ruben Chifundo',
     subtitle: 'CEO by NOX',
@@ -60,6 +62,7 @@ export const testimonialsInfo = [
       '“Ut enim ad minima veniam, quis nostrum exercitationem ullam corpor suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis utem vel eum iure reprehender qui in ea voluptate velit esse quam nihil molesti consequatur, vel illum.” ',
   },
   {
+    id: 'person-3',
     image: 'person1',
     title: 'Tigran Nazaret',
     subtitle: 'Data analyst',
@@ -67,6 +70,7 @@ export const testimonialsInfo = [
       '“Ut enim ad minima veniam, quis nostrum exercitationem ullam corpor suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis utem vel eum iure reprehender qui in ea voluptate velit esse quam nihil molesti consequatur, vel illum.” ',
   },
   {
+    id: 'person-4',
     image: 'person3',
     title: 'Alex Bern 2',
     subtitle: 'CEO by PixelPerfect',
@@ -74,6 +78,7 @@ export const testimonialsInfo = [
       '“Ut enim ad minima veniam, quis nostrum exercitationem ullam corpor suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis utem vel eum iure reprehender qui in ea voluptate velit esse quam nihil molesti consequatur, vel illum.” ',
   },
   {
+    id: 'person-5',
     image: 'person2',
     title: 'Ruben Chifundo 2',
     subtitle: 'CEO by NOX',
@@ -81,6 +86,7 @@ export const testimonialsInfo = [
       '“Ut enim ad minima veniam, quis nostrum exercitationem ullam corpor suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis utem vel eum iure reprehender qui in ea voluptate velit esse quam nihil molesti consequatur, vel illum.” ',
   },
   {
+    id: 'person-6',
     image: 'person1',
     title: 'Tigran Nazaret 2',
     subtitle: 'Data analyst',
@@ -374,91 +380,109 @@ export const AboutInfos = blogInfo.slice(-2);
 
 export const teamInfo = [
   {
+    id: 'person-1',
     image: '001_img_person_1',
     title: 'Sargis Grigor',
     subtitle: 'Data analyst',
   },
   {
+    id: 'person-2',
     image: '002_img_person_2',
     title: 'Bagrat Leo',
     subtitle: 'Data engineer',
   },
   {
+    id: 'person-3',
     image: '003_img_person_3',
     title: 'Gor Sargis',
     subtitle: 'Data analyst',
   },
   {
+    id: 'person-4',
     image: '004_img_person_4',
     title: 'Maral Mari',
     subtitle: 'Data analyst',
   },
   {
+    id: 'person-5',
     image: '005_img_person_5',
     title: 'Hakob Jirair',
     subtitle: 'Data engineer',
   },
   {
+    id: 'person-6',
     image: '006_img_person_6',
     title: 'Eva Vosgi',
     subtitle: 'Data scientist',
   },
   {
+    id: 'person-7',
     image: '007_img_person_7',
     title: 'Kohar Marine',
     subtitle: 'Data scientist',
   },
   {
+    id: 'person-8',
     image: '008_img_person_8',
     title: 'Ararat Ohannes',
     subtitle: 'Data analyst',
   },
   {
+    id: 'person-9',
     image: '009_img_person_9',
     title: 'Eduard Vosgi',
     subtitle: 'Data scientist',
   },
   {
+    id: 'person-10',
     image: '001_img_person_1',
     title: 'Sargis Grigor 2',
     subtitle: 'Data analyst',
   },
   {
+    id: 'person-11',
     image: '002_img_person_2',
     title: 'Bagrat Leo 2',
     subtitle: 'Data engineer',
   },
   {
+    id: 'person-12',
     image: '003_img_person_3',
     title: 'Gor Sargis 2',
     subtitle: 'Data analyst',
   },
   {
+    id: 'person-13',
     image: '004_img_person_4',
     title: 'Maral Mari 2',
     subtitle: 'Data analyst',
   },
   {
+    id: 'person-14',
     image: '005_img_person_5',
     title: 'Hakob Jirair 2',
     subtitle: 'Data engineer',
   },
   {
+    id: 'person-15',
     image: '006_img_person_6',
     title: 'Eva Vosgi 2',
     subtitle: 'Data scientist',
   },
   {
+    id: 'person-16',
     image: '007_img_person_7',
     title: 'Kohar Marine 2',
     subtitle: 'Data scientist',
   },
   {
+    id: 'person-17',
     image: '008_img_person_8',
     title: 'Ararat Ohannes 2',
     subtitle: 'Data analyst',
   },
   {
+    id: 'person-18',
     image: '009_img_person_9',
     title: 'Eduard Vosgi 2',
     subtitle: 'Data scientist',
@@ -467,39 +491,64 @@ export const teamInfo = [
 
 export const faqList = [
   {
-    title: 'What are data analytics?',
-    description:
-      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+    id: 'group-1',
+    name: 'General questions',
+    items: [
+      {
+        id: 'faq-1',
+        title: 'What are data analytics?',
+        description:
+          'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+      },
+      {
+        id: 'faq-2',
+        title: 'What is data mining?',
+        description:
+          'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+      },
+    ],
   },
   {
-    title: 'What is data mining?',
-    description:
-      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+    id: 'group-2',
+    name: 'Most popular questions',
+    items: [
+      {
+        id: 'faq-3',
+        title: 'What is business intelligence?',
+        description:
+          'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+      },
+      {
+        id: 'faq-4',
+        title: 'What is exploratory data analysis (EDA)?',
+        description:
+          'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+      },
+    ],
   },
   {
-    title: 'What is business intelligence?',
-    description:
-      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
-  },
-  {
-    title: 'What is exploratory data analysis (EDA)?',
-    description:
-      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
-  },
-  {
-    title: 'What is confirmatory data analysis (CDA)?',
-    description:
-      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
-  },
-  {
-    title: 'What are predictive analytics?',
-    description:
-      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
-  },
-  {
-    title: 'What is data visualisation',
-    description:
-      'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+    id: 'group-3',
+    name: 'Additional questions',
+    items: [
+      {
+        id: 'faq-5',
+        title: 'What is confirmatory data analysis (CDA)?',
+        description:
+          'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+      },
+      {
+        id: 'faq-6',
+        title: 'What are predictive analytics?',
+        description:
+          'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+      },
+      {
+        id: 'faq-7',
+        title: 'What is data visualisation',
+        description:
+          'Phasellus tristique eu nisl eu consectetur. Morbi urna massa, imperdiet in mauris et, euismod vestibulum lacus. Integer enim elit, tincidunt aliquam ligula id, lacinia auctor orci. Sed quis lobortis eros. ',
+      },
+    ],
   },
 ];
 
