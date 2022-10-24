@@ -36,7 +36,10 @@
     "lint": "eslint src/**/*.{ts,tsx,json}",
     "lint:fix": "eslint --fix src/**/*.{ts,tsx,json}",
     "format": "prettier --write src/**/*.{ts,tsx,css,md,json} --config ./.prettierrc",
-    "predeploy": "npm run build",
+    "cypress": "start-server-and-test start http://localhost:6006 cypress:open --config-file cypress.config.ts",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:test": "start-server-and-test start http://localhost:6006 cypress:run",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -63,11 +66,13 @@
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.1",
+    "cypress": "^10.10.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-react": "^1.1.7",
     "eslint-import-resolver-typescript": "^3.5.1",
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.7.1",
+    "start-server-and-test": "^1.14.0",
     "styled-components": "^5.3.6",
     "yup": "^0.32.11"
   }

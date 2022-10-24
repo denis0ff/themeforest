@@ -1,0 +1,30 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [ 16.x ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Starting Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: install modules
+        run: npm install --force
+      - name: build project
+        run: npm run build
+      - name: prettier format
+        run: npm run format
+      - name: eslint code
+        run: npm run lint:fix
+      - name: e2e test
+        uses: cypress-io/github-action@v4.2.0
+        with:
+          install: false
+          start: npm start
+          wait-on-timeout: 120
+          browser: chrome

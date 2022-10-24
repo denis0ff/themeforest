@@ -16,6 +16,7 @@ export default ({ value, handleClose, setErrorSubmit, setSuccessSubmit }: Props)
       type: 'resetOptions',
       value: { ...options },
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const isLoading = useMemo(() => isInitialized || isPending, [isInitialized, isPending]);
