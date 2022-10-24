@@ -1,6 +1,6 @@
 import { Button, TextField } from '@mui/material';
 import { useFormik } from 'formik';
-import { contactFields, sendEmailSchema } from '@constants';
+import { contactFields, sendEmailSchema as validationSchema } from '@constants';
 import { Props } from './types';
 import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
@@ -17,13 +17,13 @@ export default ({ variant }: Props) => {
 
   const formik = useFormik({
     initialValues,
-    validationSchema: sendEmailSchema,
+    validationSchema,
     onSubmit: (_, { resetForm }) => {
       setDisabled(true);
       emailjs
         .sendForm(
           process.env.REACT_APP_EMAIL_SERVICE_ID as string,
-          process.env.REACT_APP_EMAIL_TEMPLATE_ID as string,
+          process.env.REACT_APP_EMAIL_TEMPLATE_CONTACT as string,
           form.current as HTMLFormElement,
           process.env.REACT_APP_EMAIL_PUBLIC_KEY as string
         )

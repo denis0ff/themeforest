@@ -1,4 +1,5 @@
-import { Button, InputBase, Paper, Stack, Typography } from '@mui/material';
+import SubscribeForm from '@components/SubscribeForm';
+import { Stack, Typography } from '@mui/material';
 import { SectionWrapper } from '@theme';
 
 export default () => {
@@ -15,15 +16,7 @@ export default () => {
             quam, non mollis quam finibus nec.
           </Typography>
         </Stack>
-        <Paper
-          component="form"
-          sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', minWidth: 445, minHeight: 54 }}
-        >
-          <InputBase sx={{ ml: 1, flex: 1 }} placeholder="Your email" />
-          <Button color="secondary" variant="text">
-            Send
-          </Button>
-        </Paper>
+        <SubscribeForm />
       </SectionWrapper>
     </SectionWrapper>
   );
