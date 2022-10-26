@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { Props } from './types';
 import ArrowRight from '@mui/icons-material/ArrowRightAlt';
 import { getImageSize, getNewsOptions, sliceTextWithDots } from '@utils';
+import { NewsContainer } from './styled';
 
 export default ({ id, image, title, subtitle, paragraph, tags, variant }: Props) => {
   const { direction, isLink, isParagraph, isTag, isSubtitle, titleVariant } =
@@ -12,7 +13,7 @@ export default ({ id, image, title, subtitle, paragraph, tags, variant }: Props)
 
   return (
     <Link to={`/themeforest/blog/${id}`}>
-      <Stack direction={direction} alignItems="center" spacing={2} width="100%" p={1}>
+      <NewsContainer direction={direction} alignItems="center" spacing={2} width="100%" p={1}>
         <Banner image={image} {...getImageSize(variant)} />
         <div>
           {isSubtitle && <Typography variant="subtitle1">{subtitle}</Typography>}
@@ -27,7 +28,7 @@ export default ({ id, image, title, subtitle, paragraph, tags, variant }: Props)
             </Typography>
           )}
         </div>
-      </Stack>
+      </NewsContainer>
     </Link>
   );
 };
