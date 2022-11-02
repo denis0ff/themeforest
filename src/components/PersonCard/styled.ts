@@ -1,4 +1,5 @@
 import { themeParams } from '@theme';
+
 import styled from 'styled-components';
 
 export const CardInfo = styled.div`

@@ -1,11 +1,15 @@
-import PersonCard from '@components/PersonCard';
-import { SectionWrapper } from '@theme';
 import { useState } from 'react';
-import { Props } from './types';
-import { Masonry, useInfiniteLoader } from 'masonic';
+
+import { SectionWrapper } from '@theme';
 import { getFakeItems, getFakeItemsPromise } from '@utils';
 
-export default ({ persons }: Props) => {
+import { Masonry, useInfiniteLoader } from 'masonic';
+
+import PersonCard from '@components/PersonCard';
+
+import { Props } from './types';
+
+const TeamBox = ({ persons }: Props) => {
   const [items, setItems] = useState(getFakeItems(0, 9, persons));
   const loadMore = useInfiniteLoader(
     async (startIndex, stopIndex) => {
@@ -33,3 +37,5 @@ export default ({ persons }: Props) => {
     </SectionWrapper>
   );
 };
+
+export default TeamBox;

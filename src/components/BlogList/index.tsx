@@ -1,10 +1,14 @@
-import BlogItem from '@components/BlogItem';
-import { SectionWrapper } from '@theme';
 import { useBlogOptions } from '@hooks';
-import { Props } from './types';
+
+import { SectionWrapper } from '@theme';
+
 import { Button, Typography } from '@mui/material';
 
-export default ({ news, listDirection, newsVariant }: Props) => {
+import BlogItem from '@components/BlogItem';
+
+import { Props } from './types';
+
+const BlogList = ({ news, listDirection, newsVariant }: Props) => {
   const { portion, isButton, title, sectionVariant, setPage } = useBlogOptions(news, newsVariant);
 
   return (
@@ -29,3 +33,5 @@ export default ({ news, listDirection, newsVariant }: Props) => {
     </SectionWrapper>
   );
 };
+
+export default BlogList;

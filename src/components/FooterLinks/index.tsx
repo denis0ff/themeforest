@@ -1,10 +1,14 @@
-import { Stack, Typography } from '@mui/material';
-import { Logo, SectionWrapper, Social } from '@theme';
-import { additionalRoutes, contacts, routes, socials } from '@constants';
-import NavBar from '@components/NavBar';
 import { NavLink } from 'react-router-dom';
 
-export default () => {
+import { additionalRoutes, contacts, Paths, routes, socials } from '@constants';
+
+import { Logo, SectionWrapper, Social } from '@theme';
+
+import { Stack, Typography } from '@mui/material';
+
+import NavBar from '@components/NavBar';
+
+const FooterLinks = () => {
   return (
     <SectionWrapper variant="none" bgColor="dark">
       <SectionWrapper
@@ -18,7 +22,7 @@ export default () => {
         justifyContent="space-between"
       >
         <Stack direction="column" spacing={2} alignSelf="flex-start" maxWidth={285}>
-          <NavLink to="/">
+          <NavLink to={Paths.BASE}>
             <Logo image="white_logo" />
           </NavLink>
           <Typography variant="subtitle1" color="white">
@@ -48,7 +52,7 @@ export default () => {
             Contact info
           </Typography>
           {contacts.map(({ info }) => (
-            <Typography key={info} variant="subtitle1" color="secondary">
+            <Typography key={info} variant="subtitle1" color="text.secondary">
               {info}
             </Typography>
           ))}
@@ -57,3 +61,5 @@ export default () => {
     </SectionWrapper>
   );
 };
+
+export default FooterLinks;

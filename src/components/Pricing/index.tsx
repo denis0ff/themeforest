@@ -1,11 +1,15 @@
-import { Stack, Typography } from '@mui/material';
-import { priceInfo } from '@constants';
-import { SectionWrapper } from '@theme';
-import PriceCard from '@components/PriceCard';
 import { useAlertMessage } from '@hooks';
+import { priceInfo } from '@mocks';
+
+import { SectionWrapper } from '@theme';
+
+import { Stack, Typography } from '@mui/material';
+
 import AlertMessage from '@components/AlertMessage';
 
-export default () => {
+import PriceCard from '@components/PriceCard';
+
+const Pricing = () => {
   const [alertProps, setSuccess, setError] = useAlertMessage(500000);
 
   return (
@@ -25,3 +29,5 @@ export default () => {
     </SectionWrapper>
   );
 };
+
+export default Pricing;

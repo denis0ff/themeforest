@@ -1,13 +1,20 @@
-import { Button, Typography } from '@mui/material';
-import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
-import { useFormik } from 'formik';
+
 import { subscribeEmailSchema as validationSchema } from '@constants';
+
 import { useAlertMessage } from '@hooks';
+
+import emailjs from '@emailjs/browser';
+
+import { Button, Typography } from '@mui/material';
+
+import { useFormik } from 'formik';
+
 import AlertMessage from '@components/AlertMessage';
+
 import { Input, InputContainer } from './styled';
 
-export default () => {
+const SubscribeForm = () => {
   const [alertProps, setSuccess, setError] = useAlertMessage(5000);
   const [disabled, setDisabled] = useState(false);
   const form = useRef<HTMLFormElement>(null);
@@ -55,8 +62,10 @@ export default () => {
           Send
         </Button>
       </InputContainer>
-      <Typography>{formik.errors.email}</Typography>
+      <Typography variant="subtitle1">{formik.errors.email}</Typography>
       {alertProps.severity && <AlertMessage {...alertProps} />}
     </form>
   );
 };
+
+export default SubscribeForm;

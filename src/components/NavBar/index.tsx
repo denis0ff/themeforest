@@ -1,8 +1,9 @@
 import { Stack } from '@mui/material';
+
 import { Link } from './styled';
 import { Props } from './types';
 
-export default ({ direction = 'row', routes }: Props) => {
+const NavBar = ({ direction = 'row', routes }: Props) => {
   return (
     <Stack direction={direction} spacing={2}>
       {routes.map(
@@ -16,3 +17,5 @@ export default ({ direction = 'row', routes }: Props) => {
     </Stack>
   );
 };
+
+export default NavBar;

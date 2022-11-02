@@ -1,7 +1,9 @@
 import { Stack, CircularProgress } from '@mui/material';
 
-export default () => (
+const Loader = () => (
   <Stack alignItems="center">
     <CircularProgress />
   </Stack>
 );
+
+export default Loader;

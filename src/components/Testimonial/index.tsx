@@ -1,9 +1,12 @@
+import { getPageUrl, Paths } from '@constants';
+
 import { Stack, Typography, CardContent } from '@mui/material';
+
 import { CardImage, TestimonialCard } from './styled';
 import { Props } from './types';
 
-export default ({ image, title, subtitle, paragraph }: Props) => (
-  <TestimonialCard key={title} to="/themeforest/team">
+const Testimonial = ({ image, title, subtitle, paragraph }: Props) => (
+  <TestimonialCard key={title} to={getPageUrl(Paths.TEAM)}>
     <Stack direction="row" spacing={0}>
       <CardImage image={`${process.env.PUBLIC_URL}/assets/${image}.png`} />
       <Stack direction="column" spacing={0}>
@@ -16,3 +19,5 @@ export default ({ image, title, subtitle, paragraph }: Props) => (
     </CardContent>
   </TestimonialCard>
 );
+
+export default Testimonial;

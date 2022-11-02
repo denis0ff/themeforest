@@ -1,4 +1,4 @@
-import { teamInfo } from 'src/constants';
+import { teamInfo } from '@mocks';
 
 export type Props = {
   data: typeof teamInfo[0];

@@ -1,17 +1,21 @@
-import { Stack, Typography } from '@mui/material';
+import { contacts } from '@constants';
+import { AboutInfos, clientsInfo, testimonialsInfo } from '@mocks';
+
 import { Banner, SectionWrapper } from '@theme';
-import { AboutInfos, clientsInfo, contacts, testimonialsInfo } from '@constants';
+
+import { Stack, Typography } from '@mui/material';
+
 import AboutInfo from '@components/AboutInfo';
 import ClientStats from '@components/ClientStats';
-import Testimonials from '@components/Testimonials';
 import ContactForm from '@components/ContactForm';
-import PageHeader2 from '@components/PageHeader2';
-import Subscribe from '@components/Subscribe';
 import FooterLinks from '@components/FooterLinks';
+import PageHeader from '@components/PageHeader';
+import Subscribe from '@components/SubscribeLayout';
+import Testimonials from '@components/Testimonials';
 
-export default () => (
+const AboutPage = () => (
   <>
-    <PageHeader2 title="About Us" />
+    <PageHeader title="About Us" />
     <SectionWrapper variant="none" bgColor="default" direction="column" pb={4} pt={4} spacing={4}>
       {AboutInfos.map((props, i) => (
         <AboutInfo key={props.title} {...props} isMirror={i % 2 !== 0} />
@@ -20,7 +24,7 @@ export default () => (
     <SectionWrapper variant="none" bgColor="grey" direction="column" pt={4} spacing={4}>
       <SectionWrapper variant="fenced" bgColor="grey" direction="column">
         <Typography variant="h2">Ensome in numbers</Typography>
-        <ClientStats items={clientsInfo} isDiveded />
+        <ClientStats clients={clientsInfo} isDiveded />
       </SectionWrapper>
     </SectionWrapper>
     <SectionWrapper variant="none" bgColor="grey" direction="column" pb={4} spacing={4}>
@@ -67,3 +71,5 @@ export default () => (
     <FooterLinks />
   </>
 );
+
+export default AboutPage;

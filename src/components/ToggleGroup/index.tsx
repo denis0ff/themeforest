@@ -1,7 +1,8 @@
 import { ToggleButtonGroup, ToggleButton } from '@mui/material';
+
 import { Props } from './types';
 
-export default ({ toggles, picked, setPicked }: Props) => {
+const ToggleGroup = ({ toggles, picked, setPicked }: Props) => {
   const handleAlignment = (event: React.MouseEvent<HTMLElement>, newPicked: string) => {
     setPicked(newPicked);
   };
@@ -16,3 +17,5 @@ export default ({ toggles, picked, setPicked }: Props) => {
     </ToggleButtonGroup>
   );
 };
+
+export default ToggleGroup;

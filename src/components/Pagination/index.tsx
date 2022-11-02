@@ -1,8 +1,9 @@
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 import { Stack, Button } from '@mui/material';
+
 import { Props } from './types';
 
-export default ({
+const Pagination = ({
   props: [handleBackward, handleForward, isActiveBackward, isActiveForward],
 }: Props) => {
   return (
@@ -16,3 +17,5 @@ export default ({
     </Stack>
   );
 };
+
+export default Pagination;

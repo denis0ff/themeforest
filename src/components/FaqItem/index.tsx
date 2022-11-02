@@ -1,8 +1,11 @@
 import React from 'react';
+
+import AddIcon from '@mui/icons-material/Add';
+
 import { Typography } from '@mui/material';
+
 import { Container, FaqTitle } from './styled';
 import { Props } from './types';
-import AddIcon from '@mui/icons-material/Add';
 
 const FaqItem = ({ isActive, title, description, handleClick }: Props) => {
   return (

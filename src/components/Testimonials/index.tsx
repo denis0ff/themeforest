@@ -1,12 +1,16 @@
-import { Stack, Typography } from '@mui/material';
-import { Header } from './styled';
-import { Props } from './types';
 import { usePagination } from '@hooks';
-import Pagination from '@components/Pagination';
-import Testimonial from '@components/Testimonial';
+
 import { SectionWrapper } from '@theme';
 
-export default ({ title, items, count }: Props) => {
+import { Stack, Typography } from '@mui/material';
+
+import Pagination from '@components/Pagination';
+import Testimonial from '@components/Testimonial';
+
+import { Header } from './styled';
+import { Props } from './types';
+
+const Testimonials = ({ title, items, count }: Props) => {
   const [showPersons, ...props] = usePagination(items, count);
 
   return (
@@ -23,3 +27,5 @@ export default ({ title, items, count }: Props) => {
     </SectionWrapper>
   );
 };
+
+export default Testimonials;

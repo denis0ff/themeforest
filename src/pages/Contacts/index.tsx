@@ -1,12 +1,15 @@
-import Breadcrumbs from '@components/Breadcrumbs';
-import { Stack, Typography } from '@mui/material';
-import { SectionWrapper } from '@theme';
 import { contacts } from '@constants';
-import ContactForm from '@components/ContactForm';
-import MapBox from '@components/MapBox';
-import FooterLinks from '@components/FooterLinks';
 
-export default () => (
+import { SectionWrapper } from '@theme';
+
+import { Stack, Typography } from '@mui/material';
+
+import Breadcrumbs from '@components/Breadcrumbs';
+import ContactForm from '@components/ContactForm';
+import FooterLinks from '@components/FooterLinks';
+import MapBox from '@components/MapBox';
+
+const ContactsPage = () => (
   <>
     <SectionWrapper variant="fenced" bgColor="default" direction="row" spacing={4}>
       <div>
@@ -41,3 +44,5 @@ export default () => (
     <FooterLinks />
   </>
 );
+
+export default ContactsPage;

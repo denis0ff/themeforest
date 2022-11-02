@@ -1,5 +1,7 @@
-import { Stack } from '@mui/material';
 import styled from 'styled-components';
+
+import { Stack } from '@mui/material';
+
 import { themeParams } from './theme';
 
 export const Logo = styled.div<{ image: string }>`
@@ -22,14 +24,12 @@ type WrapperProps = {
   isBordered?: boolean;
 };
 
-export const SectionWrapper = styled(({ variant, bgColor, isBordered, ...props }) => (
-  <Stack {...props} />
-))<WrapperProps>`
+export const SectionWrapper = styled(Stack)<WrapperProps>`
   margin: 0 auto;
   align-items: center;
   justify-content: center;
-  width: ${({ variant }: WrapperProps) => (variant === 'fenced' ? '1110px' : '100%')};
-  background-color: ${({ bgColor }: WrapperProps) => themeParams.bgColor[bgColor]};
+  width: ${({ variant }) => (variant === 'fenced' ? '1110px' : '100%')};
+  background-color: ${({ bgColor }) => themeParams.bgColor[bgColor]};
   ${({ isBordered }) => isBordered && `border-bottom: 1px solid ${themeParams.colors.border}`};
 `;
 

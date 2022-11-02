@@ -1,9 +1,10 @@
-import FooterLinks from '@components/FooterLinks';
-import NeedHelp from '@components/NeedHelp';
-import Subscribe from '@components/Subscribe';
 import { Box } from '@mui/material';
 
-export default () => {
+import FooterLinks from '@components/FooterLinks';
+import NeedHelp from '@components/NeedHelp';
+import Subscribe from '@components/SubscribeLayout';
+
+const Footer = () => {
   return (
     <Box component="footer">
       <NeedHelp />
@@ -12,3 +13,5 @@ export default () => {
     </Box>
   );
 };
+
+export default Footer;

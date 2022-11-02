@@ -1,8 +1,9 @@
 import { CardMedia } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
+
 import { Props } from './types';
 
-export default ({ onClose, open }: Props) => {
+const VideoDialog = ({ onClose, open }: Props) => {
   return (
     <Dialog onClose={onClose} open={open}>
       <CardMedia
@@ -14,3 +15,5 @@ export default ({ onClose, open }: Props) => {
     </Dialog>
   );
 };
+
+export default VideoDialog;

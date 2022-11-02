@@ -1,4 +1,4 @@
-import { blogInfo } from '@constants';
+import { blogInfo } from '@mocks';
 import { FormFieldData, InitialFormValues } from '@types';
 
 export const sliceTextWithDots = (p: string, length = 165) =>

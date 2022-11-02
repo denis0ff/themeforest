@@ -1,12 +1,18 @@
-import { ThemeProvider } from '@emotion/react';
-import { GlobalStyles, theme } from '@theme';
-import ErrorBoundary from '@components/ErrorBoundary';
-import Header from '@components/Header';
 import { Route, Routes, BrowserRouter as Router } from 'react-router-dom';
+
 import { routes } from '@constants';
+
+import { GlobalStyles, theme } from '@theme';
+
 import { ScrollToTop } from '@utils';
 
-export default () => {
+import { ThemeProvider } from '@emotion/react';
+
+import ErrorBoundary from '@components/ErrorBoundary';
+
+import Header from '@components/Header';
+
+const App = () => {
   return (
     <Router>
       <ThemeProvider theme={theme}>
@@ -24,3 +30,5 @@ export default () => {
     </Router>
   );
 };
+
+export default App;

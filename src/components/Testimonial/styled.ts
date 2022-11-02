@@ -1,7 +1,10 @@
-import { Card, CardMedia } from '@mui/material';
-import { themeParams } from '@theme';
 import { Link } from 'react-router-dom';
+
+import { themeParams } from '@theme';
+
 import styled from 'styled-components';
+
+import { Card, CardMedia } from '@mui/material';
 
 export const CardImage = styled(CardMedia)`
   min-width: 80px;

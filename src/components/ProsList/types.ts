@@ -1,5 +1,5 @@
 export type Props = {
-  items: {
+  prosItems: {
     title: string;
     subtitle?: string;
   }[];

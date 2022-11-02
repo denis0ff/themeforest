@@ -1,6 +1,8 @@
-import { Stack } from '@mui/material';
 import { themeParams } from '@theme';
+
 import styled from 'styled-components';
+
+import { Stack } from '@mui/material';
 
 export const Header = styled(Stack)`
   width: 100%;

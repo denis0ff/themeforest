@@ -1,10 +1,13 @@
-import SearchBar from '@components/SearchBar';
-import { Autocomplete } from '@mui/material';
 import { useCallback, useState } from 'react';
-import { blogInfo } from '@constants';
-import BlogItem from '@components/BlogItem';
 
-export default () => {
+import { blogInfo } from '@mocks';
+
+import { Autocomplete } from '@mui/material';
+
+import BlogItem from '@components/BlogItem';
+import SearchBar from '@components/SearchBar';
+
+const SearchBarNavigation = () => {
   const [searchValue, setSearchValue] = useState('');
   const handleChangeOption = useCallback((value: string) => setSearchValue(value), []);
 
@@ -20,3 +23,5 @@ export default () => {
     />
   );
 };
+
+export default SearchBarNavigation;

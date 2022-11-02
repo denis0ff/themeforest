@@ -1,18 +1,24 @@
-import TagList from '@components/TagList';
-import { Stack, Typography } from '@mui/material';
-import { Banner } from '@theme';
 import { Link } from 'react-router-dom';
-import { Props } from './types';
-import ArrowRight from '@mui/icons-material/ArrowRightAlt';
-import { getImageSize, getNewsOptions, sliceTextWithDots } from '@utils';
-import { NewsContainer } from './styled';
 
-export default ({ id, image, title, subtitle, paragraph, tags, variant }: Props) => {
+import { getNewsUrl } from '@constants';
+import { Banner } from '@theme';
+
+import { getImageSize, getNewsOptions, sliceTextWithDots } from '@utils';
+
+import ArrowRight from '@mui/icons-material/ArrowRightAlt';
+import { Typography } from '@mui/material';
+
+import TagList from '@components/TagList';
+
+import { NewsContainer } from './styled';
+import { Props } from './types';
+
+const BlogItem = ({ id, image, title, subtitle, paragraph, tags, variant }: Props) => {
   const { direction, isLink, isParagraph, isTag, isSubtitle, titleVariant } =
     getNewsOptions(variant);
 
   return (
-    <Link to={`/themeforest/blog/${id}`}>
+    <Link to={getNewsUrl(id)}>
       <NewsContainer direction={direction} alignItems="center" spacing={2} width="100%" p={1}>
         <Banner image={image} {...getImageSize(variant)} />
         <div>
@@ -32,3 +38,5 @@ export default ({ id, image, title, subtitle, paragraph, tags, variant }: Props)
     </Link>
   );
 };
+
+export default BlogItem;

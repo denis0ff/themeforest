@@ -35,6 +35,9 @@
       "@src": [
         "src/"
       ],
+      "@mocks": [
+        "src/mocks/"
+      ],
     },
   }
 }

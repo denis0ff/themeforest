@@ -1,4 +1,5 @@
 import { Component, ReactNode } from 'react';
+
 import ErrorWrapper from './styled';
 
 type Props = {

@@ -1,4 +1,4 @@
-import { priceInfo } from '@constants';
+import { priceInfo } from '@mocks';
 export * from './hooks';
 export * from './props';
 

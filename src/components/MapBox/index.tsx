@@ -1,11 +1,14 @@
 import { useRef, useEffect } from 'react';
-import mapboxgl from 'mapbox-gl';
+
 import { coordinates } from '@constants';
-import { MapBox } from './styled';
+
+import mapboxgl from 'mapbox-gl';
+
+import { MapContainer } from './styled';
 
 mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN as string;
 
-export default () => {
+const MapBox = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -23,5 +26,7 @@ export default () => {
     return () => map.remove();
   }, []);
 
-  return <MapBox ref={mapContainerRef} />;
+  return <MapContainer ref={mapContainerRef} />;
 };
+
+export default MapBox;

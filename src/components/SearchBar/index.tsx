@@ -1,8 +1,9 @@
-import { Paper, InputBase } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
+import { Paper, InputBase } from '@mui/material';
+
 import { Props } from './types';
 
-export default ({ params, value, setValue }: Props) => {
+const SearchBar = ({ params, value, setValue }: Props) => {
   const handleChange: React.ChangeEventHandler<HTMLInputElement> = ({ target: { value } }) => {
     setValue(value);
   };
@@ -25,3 +26,5 @@ export default ({ params, value, setValue }: Props) => {
     </Paper>
   );
 };
+
+export default SearchBar;

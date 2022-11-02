@@ -1,13 +1,17 @@
+import { useState, useCallback, useMemo } from 'react';
+
+import { parseDuration } from '@utils';
+
+import { Typography, Stack, Button } from '@mui/material';
+
 import PriceDialog from '@components/PriceDialog';
 import ProsList from '@components/ProsList';
 import ToggleGroup from '@components/ToggleGroup';
-import { Typography, Stack, Button } from '@mui/material';
-import { useState, useCallback } from 'react';
-import { parseDuration } from '@utils';
-import { PriceCard } from './styled';
+
+import { CardContainer } from './styled';
 import { Props } from './types';
 
-export default (props: Props) => {
+const PriceCard = (props: Props) => {
   const { title, price, durations, possibilities } = props;
   const [open, setOpen] = useState(false);
   const [pickedDuration, setPickedDuration] = useState(durations[0]);
@@ -24,8 +28,10 @@ export default (props: Props) => {
     setOpen(false);
   }, []);
 
+  const prosItems = useMemo(() => possibilities.map((title) => ({ title })), [possibilities]);
+
   return (
-    <PriceCard>
+    <CardContainer>
       <Typography variant="h6">{title}</Typography>
       <Stack
         direction="row"
@@ -41,13 +47,15 @@ export default (props: Props) => {
       <Button variant="contained" onClick={handleOpen}>
         Choose plan
       </Button>
-      <ProsList items={possibilities.map((title) => ({ title }))} />
+      <ProsList prosItems={prosItems} />
       <PriceDialog
         {...props}
         open={open}
         handleClose={handleClose}
         duration={parseDuration(pickedDuration)}
       />
-    </PriceCard>
+    </CardContainer>
   );
 };
+
+export default PriceCard;

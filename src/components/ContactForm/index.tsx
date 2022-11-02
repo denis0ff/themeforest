@@ -1,14 +1,22 @@
-import { Button, TextField } from '@mui/material';
-import { useFormik } from 'formik';
-import { contactFields, sendEmailSchema as validationSchema } from '@constants';
-import { Props } from './types';
-import emailjs from '@emailjs/browser';
 import { useRef, useState } from 'react';
-import { reduceFieldsName } from '@utils';
+
+import { contactFields, sendEmailSchema as validationSchema } from '@constants';
+
 import { useAlertMessage } from '@hooks';
+
+import { reduceFieldsName } from '@utils';
+
+import emailjs from '@emailjs/browser';
+
+import { Button, TextField } from '@mui/material';
+
+import { useFormik } from 'formik';
+
 import AlertMessage from '@components/AlertMessage';
 
-export default ({ variant }: Props) => {
+import { Props } from './types';
+
+const ContactForm = ({ variant }: Props) => {
   const [alertProps, setSuccess, setError] = useAlertMessage(5000);
   const [disabled, setDisabled] = useState(false);
   const initialValues = reduceFieldsName(contactFields);
@@ -72,3 +80,5 @@ export default ({ variant }: Props) => {
     </form>
   );
 };
+
+export default ContactForm;

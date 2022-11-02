@@ -1,8 +1,10 @@
-import { Props } from './types';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+
 import PayPalButtons from '@components/PayPalButtons';
 
-export default ({ value, handleClose, setErrorSubmit, setSuccessSubmit }: Props) => {
+import { Props } from './types';
+
+const PaymentForm = ({ value, handleClose, setErrorSubmit, setSuccessSubmit }: Props) => {
   return (
     <PayPalScriptProvider
       deferLoading
@@ -20,3 +22,5 @@ export default ({ value, handleClose, setErrorSubmit, setSuccessSubmit }: Props)
     </PayPalScriptProvider>
   );
 };
+
+export default PaymentForm;

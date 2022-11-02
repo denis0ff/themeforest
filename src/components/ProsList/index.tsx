@@ -1,11 +1,14 @@
-import { Stack, Typography } from '@mui/material';
-import DoneIcon from '@mui/icons-material/Done';
-import { Props } from './types';
 import { Fragment } from 'react';
 
-export default ({ items }: Props) => (
+import DoneIcon from '@mui/icons-material/Done';
+
+import { Stack, Typography } from '@mui/material';
+
+import { Props } from './types';
+
+const ProsList = ({ prosItems }: Props) => (
   <Stack direction="column" spacing={1}>
-    {items.map(({ title, subtitle }) => (
+    {prosItems.map(({ title, subtitle }) => (
       <Fragment key={title}>
         <Typography variant="subtitle2" component="p" alignItems="center" display="flex" gap={1}>
           <DoneIcon color="primary" />
@@ -20,3 +23,5 @@ export default ({ items }: Props) => (
     ))}
   </Stack>
 );
+
+export default ProsList;

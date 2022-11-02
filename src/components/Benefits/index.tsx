@@ -1,8 +1,9 @@
 import { CardContent, Link, Typography } from '@mui/material';
+
 import { BenefitCard, CardImage, GridBox } from './styled';
 import { Props } from './types';
 
-export default ({ cards, maxWidth }: Props) => {
+const Benefits = ({ cards, maxWidth }: Props) => {
   return (
     <GridBox
       rowSpacing={4}
@@ -24,3 +25,5 @@ export default ({ cards, maxWidth }: Props) => {
     </GridBox>
   );
 };
+
+export default Benefits;

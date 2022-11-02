@@ -1,13 +1,14 @@
 import { Divider, Stack, Typography } from '@mui/material';
+
 import { Props } from './types';
 
-export default ({ items, isDiveded }: Props) => (
+const ClientStats = ({ clients, isDiveded }: Props) => (
   <Stack
     direction="row"
     spacing={2}
     divider={isDiveded && <Divider orientation="vertical" flexItem />}
   >
-    {items.map(({ label, info }) => (
+    {clients.map(({ label, info }) => (
       <Stack direction="column" key={label + info} alignItems="center" spacing={1}>
         <Typography variant="h2" color="primary">
           {info}
@@ -19,3 +20,5 @@ export default ({ items, isDiveded }: Props) => (
     ))}
   </Stack>
 );
+
+export default ClientStats;

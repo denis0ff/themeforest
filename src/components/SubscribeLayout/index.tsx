@@ -1,8 +1,10 @@
-import SubscribeForm from '@components/SubscribeForm';
-import { Stack, Typography } from '@mui/material';
 import { SectionWrapper } from '@theme';
 
-export default () => {
+import { Stack, Typography } from '@mui/material';
+
+import SubscribeForm from '@components/SubscribeForm';
+
+const SubscribeLayout = () => {
   return (
     <SectionWrapper variant="none" bgColor="dark" isBordered pt={6} pb={6}>
       <SectionWrapper variant="fenced" bgColor="dark" spacing={8} direction="row">
@@ -21,3 +23,5 @@ export default () => {
     </SectionWrapper>
   );
 };
+
+export default SubscribeLayout;

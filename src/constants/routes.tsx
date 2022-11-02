@@ -1,78 +1,98 @@
-import Home from '@pages/Home';
+import { Navigate } from 'react-router-dom';
+
+import About from '@pages/About';
 import Blog from '@pages/Blog';
 import Contacts from '@pages/Contacts';
-import Team from '@pages/Team';
-import Services from '@pages/Services';
-import About from '@pages/About';
 import Faq from '@pages/Faq';
-import NotFound from '@pages/NotFound';
-import Solutions from '@pages/Solutions';
+import Home from '@pages/Home';
 import News from '@pages/News';
-import { Navigate } from 'react-router-dom';
+import NotFound from '@pages/NotFound';
+import Services from '@pages/Services';
+import Solutions from '@pages/Solutions';
+import Team from '@pages/Team';
+
+export const enum Paths {
+  BASE = '/themeforest',
+  ROOT = '/',
+  HOME = 'home',
+  BLOG = 'blog',
+  SERVICES = 'services',
+  SOLUTIONS = 'solutions',
+  FAQ = 'faq',
+  CONTACTS = 'contacts',
+  ABOUT = 'about',
+  TEAM = 'team',
+  NOT_FOUND = '404',
+}
+
+export const getPageUrl = (path: Paths) => `${Paths.BASE}/${path}`;
+export const getNewsUrl = (id: string) => `${getPageUrl(Paths.BLOG)}/${id}`;
+
+const HomeRedirection = <Navigate to={getPageUrl(Paths.HOME)} replace />;
 
 export const routes = [
   {
     path: '',
-    element: <Navigate to="/themeforest/home" replace />,
+    element: HomeRedirection,
     label: '',
     isNav: false,
   },
   {
-    path: '/themeforest',
-    element: <Navigate to="/themeforest/home" replace />,
+    path: Paths.BASE,
+    element: HomeRedirection,
     label: '',
     isNav: false,
   },
   {
-    path: '/themeforest/home',
+    path: getPageUrl(Paths.HOME),
     element: <Home />,
     label: 'Home',
     isNav: true,
   },
   {
-    path: '/themeforest/blog',
+    path: getPageUrl(Paths.BLOG),
     element: <Blog />,
     label: 'Blog',
     isNav: true,
   },
   {
-    path: '/themeforest/blog/:id',
+    path: `${getPageUrl(Paths.BLOG)}/:id`,
     element: <News />,
     label: 'News',
     isNav: false,
   },
   {
-    path: '/themeforest/solutions',
+    path: getPageUrl(Paths.SOLUTIONS),
     element: <Solutions />,
     label: 'Solutions',
     isNav: true,
   },
   {
-    path: '/themeforest/contacts',
+    path: getPageUrl(Paths.CONTACTS),
     element: <Contacts />,
     label: 'Contacts',
     isNav: true,
   },
   {
-    path: '/themeforest/team',
+    path: getPageUrl(Paths.TEAM),
     element: <Team />,
     label: 'Our team',
     isNav: true,
   },
   {
-    path: '/themeforest/services',
+    path: getPageUrl(Paths.SERVICES),
     element: <Services />,
     label: 'Services',
     isNav: true,
   },
   {
-    path: '/themeforest/about',
+    path: getPageUrl(Paths.ABOUT),
     element: <About />,
     label: 'About',
     isNav: true,
   },
   {
-    path: '/themeforest/faq',
+    path: getPageUrl(Paths.FAQ),
     element: <Faq />,
     label: 'FAQ',
     isNav: true,
@@ -85,32 +105,32 @@ export const routes = [
 
 export const additionalRoutes = [
   {
-    path: '/themeforest/404',
+    path: getPageUrl(Paths.NOT_FOUND),
     element: <NotFound />,
     label: 'Pages',
     isNav: true,
   },
   {
-    path: '/themeforest/404',
+    path: getPageUrl(Paths.NOT_FOUND),
     element: <NotFound />,
     label: 'Elements',
     isNav: true,
   },
   {
-    path: '/themeforest/faq',
+    path: getPageUrl(Paths.FAQ),
     element: <Faq />,
     label: 'FAQ',
     isNav: true,
   },
   {
-    path: '/themeforest/404',
+    path: getPageUrl(Paths.NOT_FOUND),
     element: <NotFound />,
     label: 'Pricing',
     isNav: true,
   },
 
   {
-    path: '/themeforest/404',
+    path: getPageUrl(Paths.NOT_FOUND),
     element: <NotFound />,
     label: 'Site map',
     isNav: true,

@@ -1,12 +1,15 @@
-import Breadcrumbs from '@components/Breadcrumbs';
-import TeamBox from '@components/TeamBox';
-import { Stack, Typography } from '@mui/material';
-import { SectionWrapper } from '@theme';
-import { teamInfo } from '@constants';
-import Subscribe from '@components/Subscribe';
-import FooterLinks from '@components/FooterLinks';
+import { teamInfo } from '@mocks';
 
-export default () => (
+import { SectionWrapper } from '@theme';
+
+import { Stack, Typography } from '@mui/material';
+
+import Breadcrumbs from '@components/Breadcrumbs';
+import FooterLinks from '@components/FooterLinks';
+import Subscribe from '@components/SubscribeLayout';
+import TeamBox from '@components/TeamBox';
+
+const TeamPage = () => (
   <>
     <SectionWrapper bgColor="dark" variant="none" pt={4} pb={8}>
       <SectionWrapper bgColor="dark" variant="fenced" direction="column" spacing={4}>
@@ -39,3 +42,5 @@ export default () => (
     <FooterLinks />
   </>
 );
+
+export default TeamPage;

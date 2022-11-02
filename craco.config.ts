@@ -19,6 +19,7 @@ module.exports = {
       '@store': path.resolve(__dirname, 'src/store'),
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@assets': path.resolve(__dirname, 'src/assets'),
+      '@mocks': path.resolve(__dirname, 'src/mocks'),
     },
   },
 };

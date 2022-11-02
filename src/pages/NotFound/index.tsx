@@ -1,6 +1,6 @@
 import { Typography } from '@mui/material';
 
-export default () => (
+const NotFoundPage = () => (
   <>
     <Typography variant="h1" textAlign="center" color="error" p={2}>
       404 Error
@@ -13,3 +13,5 @@ export default () => (
     </Typography>
   </>
 );
+
+export default NotFoundPage;

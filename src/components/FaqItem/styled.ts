@@ -1,5 +1,6 @@
-import { Paper, Stack, styled } from '@mui/material';
 import { themeParams } from '@theme';
+
+import { Paper, Stack, styled } from '@mui/material';
 
 export const Container = styled(Paper)`
   width: 100%;

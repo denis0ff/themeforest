@@ -1,13 +1,16 @@
+import { useCallback, useDeferredValue, useMemo, useState } from 'react';
+
+import { blogInfo } from '@mocks';
+
+import { Typography } from '@mui/material';
+
 import BlogList from '@components/BlogList';
 import FooterLinks from '@components/FooterLinks';
 import PageHeader from '@components/PageHeader';
 import SearchBar from '@components/SearchBar';
-import Subscribe from '@components/Subscribe';
-import { blogInfo } from '@constants';
-import { Typography } from '@mui/material';
-import { useCallback, useDeferredValue, useMemo, useState } from 'react';
+import Subscribe from '@components/SubscribeLayout';
 
-export default () => {
+const BlogPage = () => {
   const [searchValue, setSearchValue] = useState('');
   const defferedValue = useDeferredValue(searchValue);
 
@@ -21,6 +24,7 @@ export default () => {
   return (
     <>
       <PageHeader
+        isDetailed
         title="Discover new things with Ensome blog"
         subtitle="Blog"
         description="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo."
@@ -38,3 +42,5 @@ export default () => {
     </>
   );
 };
+
+export default BlogPage;

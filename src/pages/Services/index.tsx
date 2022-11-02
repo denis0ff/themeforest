@@ -1,13 +1,15 @@
-import Benefits from '@components/Benefits';
+import { servicesInfo } from '@mocks';
+
 import { SectionWrapper } from '@theme';
-import { servicesInfo } from '@constants';
+
+import Benefits from '@components/Benefits';
 import Clients from '@components/Clients';
 import Footer from '@components/Footer';
 import PageHeader from '@components/PageHeader';
 
-export default () => (
+const ServicesPage = () => (
   <>
-    <PageHeader title="Data Analytics Services" subtitle="Services" />
+    <PageHeader isDetailed title="Data Analytics Services" subtitle="Services" />
     <SectionWrapper variant="fenced" bgColor="default" pb={8} pt={8}>
       <Benefits cards={servicesInfo} maxWidth="100%" />
     </SectionWrapper>
@@ -15,3 +17,5 @@ export default () => (
     <Footer />
   </>
 );
+
+export default ServicesPage;

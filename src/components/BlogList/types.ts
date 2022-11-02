@@ -1,4 +1,4 @@
-import { blogInfo } from '@constants';
+import { blogInfo } from '@mocks';
 
 export type Props = {
   news: typeof blogInfo;

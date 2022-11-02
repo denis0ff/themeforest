@@ -1,6 +1,8 @@
-import { Grid } from '@mui/material';
 import { themeParams } from '@theme';
+
 import styled from 'styled-components';
+
+import { Grid } from '@mui/material';
 
 export const GridBox = styled(Grid)`
   display: grid;

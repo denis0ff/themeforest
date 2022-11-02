@@ -1,9 +1,12 @@
-import { Typography } from '@mui/material';
 import { Banner } from '@theme';
+
+import { Typography } from '@mui/material';
+
 import { CardInfo } from './styled';
+
 import { Props } from './types';
 
-export default ({ data: { image, title, subtitle } }: Props) => (
+const PersonCard = ({ data: { image, title, subtitle } }: Props) => (
   <Banner width="350" height="500" image={image}>
     <CardInfo>
       <Typography variant="subtitle1" color="white">
@@ -15,3 +18,5 @@ export default ({ data: { image, title, subtitle } }: Props) => (
     </CardInfo>
   </Banner>
 );
+
+export default PersonCard;

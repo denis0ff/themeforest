@@ -34,9 +34,12 @@ export const themeParams = {
   },
 };
 
-let theme = createTheme({});
-theme = createTheme({
+export const theme = createTheme({
   palette: {
+    common: {
+      black,
+      white,
+    },
     primary: {
       main: '#185CFF',
       contrastText: '#fff',
@@ -52,6 +55,10 @@ theme = createTheme({
     error: {
       main: '#C14040',
       contrastText: '#fff',
+    },
+    text: {
+      primary: black,
+      secondary: '#9497A1',
     },
   },
 
@@ -124,5 +131,3 @@ theme = createTheme({
     },
   },
 });
-
-export default theme;

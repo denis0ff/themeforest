@@ -1,6 +1,8 @@
-import { InputBase, Paper } from '@mui/material';
 import { themeParams } from '@theme';
+
 import styled from 'styled-components';
+
+import { InputBase, Paper } from '@mui/material';
 
 export const InputContainer = styled(Paper)`
   padding: ${themeParams.spaces[1]} ${themeParams.spaces[2]};

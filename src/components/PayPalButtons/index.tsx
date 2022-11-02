@@ -1,13 +1,16 @@
 import { useEffect, useMemo, useState } from 'react';
+
 import {
   PayPalButtons,
   PayPalButtonsComponentProps,
   usePayPalScriptReducer,
 } from '@paypal/react-paypal-js';
-import { Props } from './types';
+
 import Loader from '@components/Loader';
 
-export default ({ value, handleClose, setErrorSubmit, setSuccessSubmit }: Props) => {
+import { Props } from './types';
+
+const PayPalButton = ({ value, handleClose, setErrorSubmit, setSuccessSubmit }: Props) => {
   const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
   const [isInitialized, setIsInitialized] = useState(true);
 
@@ -53,3 +56,5 @@ export default ({ value, handleClose, setErrorSubmit, setSuccessSubmit }: Props)
     </>
   );
 };
+
+export default PayPalButton;

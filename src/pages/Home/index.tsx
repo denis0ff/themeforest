@@ -1,16 +1,22 @@
-import { Box, Button, Stack, Typography } from '@mui/material';
-import { Banner, SectionWrapper } from '@theme';
-import { benefitsInfo, blogInfo, testimonialsInfo } from '@constants';
-import { CircleLink } from './styled';
-import Benefits from '@components/Benefits';
-import Testimonials from '@components/Testimonials';
-import Pricing from '@components/Pricing';
-import Blog from '@components/HomeBlog';
-import Footer from '@components/Footer';
-import Clients from '@components/Clients';
 import { NavLink } from 'react-router-dom';
 
-export default () => (
+import { getPageUrl, Paths } from '@constants';
+import { benefitsInfo, blogInfo, testimonialsInfo } from '@mocks';
+
+import { Banner, SectionWrapper } from '@theme';
+
+import { Box, Button, Stack, Typography } from '@mui/material';
+
+import Benefits from '@components/Benefits';
+import Clients from '@components/Clients';
+import Footer from '@components/Footer';
+import Blog from '@components/HomeBlog';
+import Pricing from '@components/Pricing';
+import Testimonials from '@components/Testimonials';
+
+import { CircleLink } from './styled';
+
+const HomePage = () => (
   <>
     <SectionWrapper variant="fenced" bgColor="default" direction="row" mt={8} mb={8}>
       <Typography variant="h1">
@@ -26,7 +32,7 @@ export default () => (
     </SectionWrapper>
     <SectionWrapper variant="none" bgColor="default">
       <Banner image="home1" height="590">
-        <CircleLink to="/themeforest/services">
+        <CircleLink to={getPageUrl(Paths.SERVICES)}>
           Learn more
           <div></div>
         </CircleLink>
@@ -46,7 +52,7 @@ export default () => (
           laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
           architecto beatae vitae dicta sunt explicabo.
         </Typography>
-        <NavLink to="/themeforest/solutions">
+        <NavLink to={getPageUrl(Paths.SOLUTIONS)}>
           <Button variant="contained">Discover more</Button>
         </NavLink>
       </div>
@@ -61,7 +67,7 @@ export default () => (
             laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
             architecto beatae vitae dicta sunt explicabo.
           </Typography>
-          <NavLink to="/themeforest/solutions">
+          <NavLink to={getPageUrl(Paths.SOLUTIONS)}>
             <Button variant="contained">Learn more</Button>
           </NavLink>
         </Stack>
@@ -87,3 +93,5 @@ export default () => (
     <Footer />
   </>
 );
+
+export default HomePage;

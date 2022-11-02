@@ -1,4 +1,4 @@
-import { AboutInfos } from '@constants';
+import { AboutInfos } from '@mocks';
 
 type Item = typeof AboutInfos[0];
 
